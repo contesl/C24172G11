@@ -1,0 +1,77 @@
+<!--------------------------------------------------------------------
+* Copyright (C) 2002 by Progress Software Corporation ("PSC"),       *
+* 14 Oak Park, Bedford, MA 01730, and other contributors as listed   *
+* below.  All Rights Reserved.                                       *
+*                                                                    *
+* The Initial Developer of the Original Code is PSC.  The Original   *
+* Code is Progress IDE code released to open source December 1, 2000.*
+*                                                                    *
+* The contents of this file are subject to the Possenet Public       *
+* License Version 1.0 (the "License"); you may not use this file     *
+* except in compliance with the License.  A copy of the License is   *
+* available as of the date of this notice at                         *
+* http://www.possenet.org/license.html                               *
+*                                                                    *
+* Software distributed under the License is distributed on an "AS IS"*
+* basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. You*
+* should refer to the License for the specific language governing    *
+* rights and limitations under the License.                          *
+*                                                                    *
+* Contributors:                                                      *
+*                                                                    *
+--------------------------------------------------------------------->
+<!-- custchk.htm -->
+
+<!-- SHOPPING CART - CHECK CUSTOMER -->
+
+<HTML><HEAD>
+<TITLE>SportsPro Online! Shopping Cart</TITLE>
+<script language="JavaScript">
+
+function confirmExit() {
+   if (confirm("Are you sure you want to exit the SportsPro OnLine?")) {
+      window.location='home.w';
+   }
+}
+
+</script>
+
+</HEAD>
+
+<!-- BODY BGCOLOR="#FFFFFF" -->
+<BODY BGCOLOR="#FFFFFF">
+<!--begin nav-->
+
+<center>
+<table border="0">
+    <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td><img src="/webspeed31D/samples/internet/header.gif" usemap="#header" border="0">
+            <map name="header">
+            <area shape="rect" coords="560, 0, 600, 25" href="JavaScript:confirmExit()"
+              onMouseOver="window.status='Exit SportsPro On-Line';return true"
+              onMouseOut="window.status='';return true">
+            </map></td>
+    </tr>
+</table>
+
+<p>
+<br>
+<!-- end nav -->
+
+
+<H2>Customer Login Screen</H2>
+<p>Enter your customer number, or leave blank and a new customer record will be created for you.</p>
+<FORM ACTION="detail.w?CustChk=Yes" METHOD="POST" NAME="CheckCustomerForm">
+<TABLE>
+  <TR>
+     <TD><B>Customer No.</B></TD>
+     <TD><INPUT TYPE="TEXT" SIZE="8" NAME="Customer.CustNum" VALUE=""></TD>
+     <TD><INPUT TYPE="SUBMIT" NAME="SUBMIT" VALUE="SUBMIT"><TD>
+  </TR>
+</TABLE>
+</CENTER>
+
+</BODY>
+</HTML>
+

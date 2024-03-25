@@ -1,0 +1,133 @@
+<!--------------------------------------------------------------------
+* Copyright (C) 2000 by Progress Software Corporation ("PSC"),       *
+* 14 Oak Park, Bedford, MA 01730, and other contributors as listed   *
+* below.  All Rights Reserved.                                       *
+*                                                                    *
+* The Initial Developer of the Original Code is PSC.  The Original   *
+* Code is Progress IDE code released to open source December 1, 2000.*
+*                                                                    *
+* The contents of this file are subject to the Possenet Public       *
+* License Version 1.0 (the "License"); you may not use this file     *
+* except in compliance with the License.  A copy of the License is   *
+* available as of the date of this notice at                         *
+* http://www.possenet.org/license.html                               *
+*                                                                    *
+* Software distributed under the License is distributed on an "AS IS"*
+* basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. You*
+* should refer to the License for the specific language governing    *
+* rights and limitations under the License.                          *
+*                                                                    *
+* Contributors:                                                      *
+*                                                                    *
+--------------------------------------------------------------------->
+<HTML>
+<HEAD>
+<META NAME="wsoptions" CONTENT="no-output">
+<TITLE>Catalog Item Browser</TITLE></HEAD>
+
+<BODY BGCOLOR="#ffffff">
+
+<script language="JavaScript">
+function confirmExit() {
+   if (confirm("Are you sure you want to exit SportsPro OnLine?")) {
+      window.location='home.html';
+   }
+}
+</script>
+
+<center>
+<table border="0">
+    <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td><img src="/Sports2000/images/header.gif" usemap="#header" border="0">
+            <map name="header">
+            <area shape="rect" coords="560, 0, 600, 25" href="JavaScript:confirmExit()"
+              onMouseOver="window.status='Exit SportsPro On-Line';return true"
+              onMouseOut="window.status='';return true">
+            </map></td>
+    </tr>
+</table>
+
+<br>
+
+<CENTER><H2>Category: `get-field("Category")`</H2><CENTER>
+
+<TABLE BORDER>
+  <TH>Item</TH>
+  <TH>Item #</TH>
+  <TH>Description</TH>
+  <TH>Price</TH>
+</TR>
+
+<script language="SpeedScript">
+
+  DEF VAR category-num AS INTEGER NO-UNDO.
+  DEF VAR TmpUrl AS CHAR NO-UNDO.
+
+
+  TmpUrl = url-format("itemdet.html","Category",?).
+
+  FOR EACH item WHERE item.category1 = get-field("Category") NO-LOCK:
+    DISPLAY item.price.
+</script> 
+
+<TR >
+  <TD><A HREF='`TmpUrl + url-field("Item",STRING(item.itemnum),?)`'>`item.itemname`</A></TD>
+  <TD>`item.itemnum`</TD>
+  <TD>`item.catdescription`</TD>
+  <TD>`item.price:SCREEN-VALUE`</TD>
+</TR>
+
+<script language="SpeedScript">
+  END.
+</script>
+
+</TABLE>
+<P>
+<A HREF="catalog.w"><img src="`RootURL`/samples/internet/catalog.gif" border=0></A>
+</center>
+
+<HR>                                            
+<P>
+<CENTER>
+<TABLE>
+<TR> 
+<TD valign=top>
+<FONT >Powered by <br><IMG
+ALIGN = "bottom" SRC="`RootURL`/samples/internet/wslogo.gif" ALT="http://webspeed.progress.com"> </FONT> 
+
+</TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD valign=top>
+<applet codebase=`RootURL`/samples/internet code=Credits width=350 height=30>
+<param name=startDelay value=10>
+<param name=endDelay value=10>
+<param name=defaultDelay value=10>
+<param name=speed value=40>
+<param name=defaultFontSize value=24>
+
+<param name=text0 value="Click on the item">
+<param name=delay0 value=60>
+<param name=fontStyle0 value=BOLD>
+
+<param name=text1 value="for more details!">
+<param name=delay1 value=40>
+<param name=fontColor1 value="blue">
+<param name=fontName1 value="TimesRoman">
+<param name=fontStyle1 value="BOLDITALIC">
+<param name=fontSize1 value=18>
+
+</applet>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+
+
+</P></BODY></HTML>
+

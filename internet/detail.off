@@ -1,0 +1,16 @@
+/* HTML offsets */
+htm-file= C:\progress\wrk\internet\detail.htm
+version= 
+
+field[1]= "CustNum,input,hidden,fill-in,44,1,44,36"
+field[2]= "SubmitField,input,hidden,fill-in,45,1,45,49"
+field[3]= "CustomerNum,INPUT,TEXT,fill-in,47,65,47,102"
+field[4]= "UpdateOK,INPUT,TEXT,fill-in,48,21,48,55"
+field[5]= "CustName,INPUT,,fill-in,50,63,50,85"
+field[6]= "CheckOut,INPUT,TEXT,fill-in,51,5,51,39"
+field[7]= "CustAddress,INPUT,,fill-in,54,18,54,43"
+field[8]= "CustCity,INPUT,,fill-in,56,63,56,85"
+field[9]= "CustState,INPUT,,fill-in,58,64,58,87"
+field[10]= "CustZipCode,INPUT,,fill-in,60,66,60,91"
+field[11]= "CustPhone,INPUT,,fill-in,62,64,62,87"
+ 

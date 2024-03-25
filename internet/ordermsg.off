@@ -1,0 +1,26 @@
+/* HTML offsets */
+htm-file= C:\progress\wrk\internet\ordermsg.htm
+version= 
+
+field[1]= "CustomerName,INPUT,TEXT,fill-in,121,23,121,61"
+field[2]= "OrderNum,INPUT,TEXT,fill-in,125,8,125,50"
+field[3]= "CustID,INPUT,TEXT,fill-in,127,8,127,48"
+field[4]= "OrderDate,INPUT,TEXT,fill-in,129,8,129,51"
+field[5]= "Address,INPUT,,fill-in,140,8,140,37"
+field[6]= "Address2,INPUT,,fill-in,145,8,145,38"
+field[7]= "CSZ,INPUT,,fill-in,150,8,150,33"
+field[8]= "Phone,INPUT,,fill-in,154,8,154,35"
+field[9]= "DataRows,!--WSTAG,,fill-in,171,1,171,26"
+field[10]= "SubTotal,INPUT,TEXT,fill-in,176,59,176,93"
+field[11]= "Shipping,INPUT,TEXT,fill-in,178,63,178,97"
+field[12]= "SalesTax,INPUT,TEXT,fill-in,180,64,180,98"
+field[13]= "OrderTotal,INPUT,TEXT,fill-in,182,63,182,99"
+field[14]= "ShippingMethod,INPUT,TEXT,fill-in,193,17,193,57"
+field[15]= "Terms,INPUT,TEXT,fill-in,195,17,195,48"
+field[16]= "PO,INPUT,TEXT,fill-in,199,17,199,45"
+field[17]= "Instructions,INPUT,TEXT,fill-in,201,17,201,55"
+field[18]= "PromiseDate,INPUT,TEXT,fill-in,205,15,205,52"
+field[19]= "Retail,INPUT,TEXT,fill-in,211,32,211,64"
+field[20]= "Discount,INPUT,TEXT,fill-in,212,33,212,67"
+field[21]= "Total,INPUT,TEXT,fill-in,213,25,213,56"
+ 

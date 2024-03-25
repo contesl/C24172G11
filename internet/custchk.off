@@ -1,0 +1,6 @@
+/* HTML offsets */
+htm-file= C:\progress\wrk\internet\custchk.htm
+version= 
+
+field[1]= "Customer.CustNum,INPUT,TEXT,fill-in,47,10,47,70"
+ 

@@ -1,0 +1,18 @@
+/* HTML offsets */
+htm-file= C:\progress\wrk\internet\order.htm
+version= 
+
+field[1]= "Marquee,INPUT,,fill-in,133,1,134,107"
+field[2]= "CustomerName,INPUT,TEXT,fill-in,136,23,136,61"
+field[3]= "OrderNum,INPUT,TEXT,fill-in,140,8,140,50"
+field[4]= "CustID,INPUT,TEXT,fill-in,142,8,142,48"
+field[5]= "OrderDate,INPUT,TEXT,fill-in,144,8,144,51"
+field[6]= "Address,INPUT,,fill-in,155,8,155,37"
+field[7]= "Address2,INPUT,,fill-in,160,8,160,38"
+field[8]= "CSZ,INPUT,,fill-in,165,8,165,33"
+field[9]= "Phone,INPUT,,fill-in,169,8,169,35"
+field[10]= "ShippingMethod,SELECT,,selection-list,179,1,183,9"
+field[11]= "Terms,INPUT,TEXT,fill-in,186,15,186,46"
+field[12]= "PO,INPUT,TEXT,fill-in,190,15,190,43"
+field[13]= "Instructions,TEXTAREA,,editor,192,25,192,99"
+ 

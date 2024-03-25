@@ -1,0 +1,291 @@
+<!--------------------------------------------------------------------
+* Copyright (C) 2002 by Progress Software Corporation ("PSC"),       *
+* 14 Oak Park, Bedford, MA 01730, and other contributors as listed   *
+* below.  All Rights Reserved.                                       *
+*                                                                    *
+* The Initial Developer of the Original Code is PSC.  The Original   *
+* Code is Progress IDE code released to open source December 1, 2000.*
+*                                                                    *
+* The contents of this file are subject to the Possenet Public       *
+* License Version 1.0 (the "License"); you may not use this file     *
+* except in compliance with the License.  A copy of the License is   *
+* available as of the date of this notice at                         *
+* http://www.possenet.org/license.html                               *
+*                                                                    *
+* Software distributed under the License is distributed on an "AS IS"*
+* basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. You*
+* should refer to the License for the specific language governing    *
+* rights and limitations under the License.                          *
+*                                                                    *
+* Contributors:                                                      *
+*                                                                    *
+--------------------------------------------------------------------->
+<!-- order.htm -->
+<HTML>
+
+<HEAD>
+	<script language="JavaScript">
+		<!--
+		var nMonth = 0;
+		function confirmExit() {
+		   if (confirm("Seguro que quiere salir de SportsPro OnLine?")) {
+			  window.location='home.html';
+		   }
+		}
+		
+		function isMonth(mnth) {
+			m = mnth.toUpperCase();
+			if (m == "JAN") {nMonth = 1;}
+			else if ( m == "FEB") {nMonth = 2;}
+			else if ( m == "MAR") {nMonth = 3;}
+			else if ( m == "APR") {nMonth = 4;}
+			else if ( m == "MAY") {nMonth = 5;}
+			else if ( m == "JUN" ) {nMonth = 6;}
+			else if ( m == "JUL"  ) {nMonth = 7;}
+			else if ( m == "AUG" ) {nMonth = 8;}
+			else if ( m == "SEP" ) {nMonth = 9;}
+			else if ( m == "OCT" ) {nMonth = 10;}
+			else if ( m == "NOV" ) {nMonth = 11;}
+			else if ( m == "DEC" ) {nMonth = 12;}
+		
+			if ( nMonth > 0 ) {return true;}
+			return false;
+		}
+		function isValidDate( date_Field ){
+			/* 	if the month is valid, we can then use JavaScript to return what it thinks is the month.  
+				If the return value does not match the entered value, this is not a valid date.  */
+
+		var sDate = date_Field.value;
+		var vDate = new Date(date_Field.value);
+		var vjMonth = vDate.getMonth();
+		var sMonth = vDate.toString();
+		var nDelim = 0;
+		var subMonth;
+		var bValid = false;
+
+		// lets see if this is '/' delimited, or space delimited
+		nDelim = sDate.indexOf("/");
+
+		if (nDelim > 0) { 		 //  '/' delimited now we need to get the numeric value
+			nMonth = parseInt(sDate.substring(0, nDelim), 10);
+			if (nMonth >= 1 && nMonth <= 12) {
+				// window.alert("valid Month value " + nMonth);
+				bValid = true;
+			}
+			else {				// window.alert("invalid " + nMonth);
+			}
+		} else { 	// space delimited, but is it still numeric or alpha???
+			nDelim = sDate.indexOf(" ");
+			if (nDelim == 1 || nDelim == 2) {		// should be numeric
+				nMonth = parseInt(sDate.substring(0, nDelim), 10);
+				if (nMonth >= 1 && nMonth <= 12) {
+					// window.alert("valid " + nMonth);
+					bValid = true;
+				}
+				else {
+					// window.alert("invalid month " + nMonth); 
+				}
+			}
+			else if (isMonth(sDate.substring(0, 3))) {
+				// window.alert("valid month " + sDate.substring(0,3));
+				bValid = true;
+			}
+			else {
+				// window.alert("invalid alpha month " + sDate.substring(0,3));
+			}
+		}
+
+
+		if (bValid == true) {
+			// window.alert("nMonth: " + nMonth);
+			// window.alert("vjMonth: " + vjMonth);
+
+			if (nMonth == (vjMonth + 1)) {
+				// window.alert ("The Date is Valid");
+				return true;
+			}
+		}
+
+		window.alert("Date is Invalid, please reenter");
+
+		date_Field.focus();
+		date_Field.select();
+
+		return false;
+}
+		ScrollSpeed = 200;  // milliseconds between scrolls
+
+		ScrollChars = 1;    // chars scrolled per time period
+
+		function ScrollMarquee() {
+
+			window.setTimeout('ScrollMarquee()', ScrollSpeed);
+
+			var msg = document.Order_form.Marquee.value;
+
+			document.Order_form.Marquee.value = msg.substring(ScrollChars) + msg.substring(0, ScrollChars);
+
+		}
+
+
+		//-->
+	</script>
+
+
+	<TITLE>SportsPro Online! Procesamiento de la Orden</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" onLoad="ScrollMarquee()">
+
+	<center>
+		<table border="0">
+			<tr>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td><img src="/Sports2000/images/header.gif" usemap="#header" border="0">
+					<map name="header">
+						<area shape="rect" coords="560, 0, 600, 25" href="JavaScript:confirmExit()"
+							onMouseOver="window.status='Exit SportsPro On-Line';return true"
+							onMouseOut="window.status='';return true">
+					</map>
+				</td>
+			</tr>
+		</table>
+
+		<p><br>
+		<p>
+
+			<HR>
+		<FORM ACTION="cart.w?CompleteOrder" METHOD="POST" NAME="Order_form">
+			<INPUT NAME="Marquee" SIZE=78 VALUE="   . . .    Tiene 15 minutos para completar la transaccion!">
+			<P>
+				<B><I>
+						<P>
+						<TABLE BORDER=0 WIDTH=90%>
+							<TR>
+								<TD ALIGN="RIGHT">Numero de Orden:</TD>
+								<TD><B><INPUT TYPE="TEXT" NAME="OrderNum" SIZE=12></B></TD>
+								<TD ALIGN="RIGHT">Numero de Miembro:</TD>
+								<TD><B><INPUT TYPE="TEXT" NAME="CustID" SIZE=12></B></TD>
+								<TD ALIGN="RIGHT">Fecha de la Orden:</TD>
+								<TD><B><INPUT TYPE="TEXT" NAME="OrderDate" SIZE=12></B></TD>
+							</TR>
+						</TABLE>
+
+						<P>
+
+							<B><I>Informacion de contacto</B>
+					</I>
+					<P>
+					<TABLE BORDER=0 WIDTH=90% CELLPADDING=1 CELLSPACING=1>
+
+						<TR>
+							<TD ALIGN="RIGHT">Direccion:</TD>
+							<TD><B><INPUT NAME="Address" SIZE=28></B></TD>
+						</TR>
+
+						<TR>
+							<TD ALIGN="RIGHT"></TD>
+							<TD><B><INPUT NAME="Address2" SIZE=28></B></TD>
+						</TR>
+
+						<TR>
+							<TD ALIGN="RIGHT">Ciudad, Codigo Postal:</TD>
+							<TD><B><INPUT NAME="CSZ" SIZE=28></B></TD>
+						</TR>
+						<TR>
+							<TD ALIGN="RIGHT">Telefono:</TD>
+							<TD><B><INPUT NAME="Phone" SIZE=28></B></TD>
+						</TR>
+					</TABLE>
+
+					<HR>
+
+					<TABLE>
+						<TR>
+							<TD ALIGN="RIGHT">Tipo de envio:</TD>
+							<TD COLSPAN=2>
+								<SELECT NAME="ShippingMethod">
+									<OPTION VALUE="1">UPS</OPTION>
+									<OPTION VALUE="2">Fedex</OPTION>
+									<OPTION VALUE="3">Otros</OPTION>
+								</SELECT>
+							</TD>
+							<TD ALIGN="RIGHT">Terminos:</TD>
+							<TD COLSPAN=2><INPUT TYPE="TEXT" NAME="Terms"></TD>
+						</TR>
+						<TR>
+							<TD ALIGN="RIGHT">OC#:</TD>
+							<TD COLSPAN=2><INPUT TYPE="TEXT" NAME="PO"></TD>
+							<TD ALIGN="RIGHT">Instrucciones Especiales:</TD>
+							<TD COLSPAN=2 ROWSPAN=2><TEXTAREA ROWS="4" COLS="25" NAME="Instructions"
+									WRAP="Virtual"></TEXTAREA>
+							</TD>
+						</TR>
+					</TABLE>
+					<HR>
+
+					<P>
+						<INPUT TYPE="SUBMIT" NAME="SUBMIT" VALUE="Aceptar Orden">
+						<INPUT TYPE="RESET" VALUE="Limpiar Campos">
+
+
+		</FORM>
+
+		<P><A HREF="/Sports2000/internet/cart.htm">Volver al contenido del carrito</A> <BR>
+			<A HREF="/Sports2000/internet/catalog.html">Continuar Comprando...Volver al Catalogo</A>
+		</P>
+
+		<CENTER>
+			<TABLE>
+				<TR>
+
+					</TD>
+					<TD></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD></TD>
+					<TD valign=top>
+						<applet codebase=/webspeed31D/samples/internet code=Credits width=350 height=30>
+							<param name=startDelay value=10>
+							<param name=endDelay value=10>
+							<param name=defaultDelay value=10>
+							<param name=speed value=40>
+							<param name=defaultFontSize value=24>
+
+							<param name=text0 value="Complete your Order!">
+							<param name=delay0 value=60>
+							<param name=fontStyle0 value=BOLD>
+
+							<param name=text1 value="or continue shopping!">
+							<param name=delay1 value=40>
+							<param name=fontColor1 value="blue">
+							<param name=fontName1 value="TimesRoman">
+							<param name=fontStyle1 value="BOLDITALIC">
+							<param name=fontSize1 value=18>
+
+						</applet>
+					</TD>
+				</TR>
+			</TABLE>
+		</CENTER>
+		<hr>
+		<CENTER>
+			<TABLE>
+				<TR>
+					<TD valign=top>
+						<FONT>
+							<FONT>
+								<h3>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Kierszenowicz, Tomas / Conte,
+									Sergio Luis <h3>
+							</FONT>
+						</FONT>
+					</TD>
+				</TR>
+			</TABLE>
+
+			</P>
+</BODY>
+
+</HTML>

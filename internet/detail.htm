@@ -1,0 +1,97 @@
+<!--------------------------------------------------------------------
+* Copyright (C) 2002 by Progress Software Corporation ("PSC"),       *
+* 14 Oak Park, Bedford, MA 01730, and other contributors as listed   *
+* below.  All Rights Reserved.                                       *
+*                                                                    *
+* The Initial Developer of the Original Code is PSC.  The Original   *
+* Code is Progress IDE code released to open source December 1, 2000.*
+*                                                                    *
+* The contents of this file are subject to the Possenet Public       *
+* License Version 1.0 (the "License"); you may not use this file     *
+* except in compliance with the License.  A copy of the License is   *
+* available as of the date of this notice at                         *
+* http://www.possenet.org/license.html                               *
+*                                                                    *
+* Software distributed under the License is distributed on an "AS IS"*
+* basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. You*
+* should refer to the License for the specific language governing    *
+* rights and limitations under the License.                          *
+*                                                                    *
+* Contributors:                                                      *
+*                                                                    *
+--------------------------------------------------------------------->
+<html>
+<head>
+<title>Welcome To SportsPro On-Line! </title>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+function doSubmit(passed) { 
+  if (document.Info.CustName.value == '')
+    window.alert('Customer name required.');
+  else {
+    document.Info.SubmitField.value=passed;	
+    document.Info.submit();
+  }
+}
+
+function confirmExit() {
+   if (confirm("Are you sure you want to exit the SportsPro OnLine?")) {
+      window.location='home.w';
+   }
+}
+
+</script>
+</head>
+<body bgcolor="white">
+
+<!--begin nav-->
+
+<center>
+<table border="0">
+    <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td><img src="/webspeed31D/samples/internet/header.gif" usemap="#header" border="0">
+            <map name="header">
+            <area shape="rect" coords="560, 0, 600, 25" href="JavaScript:confirmExit()"
+              onMouseOver="window.status='Exit SportsPro On-Line';return true"
+              onMouseOut="window.status='';return true">
+            </map></td>
+    </tr>
+</table>
+
+<p>
+<br>
+<!-- end nav -->
+
+<form name="Info" action="detail.w" METHOD="POST" >
+<input type="hidden" name="CustNum">
+<input type="hidden" name="SubmitField" value="">
+<TABLE>
+<TR><TD ALIGN="RIGHT" COLSTART="1">Cust #:</TD><TD COLSTART="2"><INPUT NAME="CustomerNum" TYPE="TEXT"></TD>
+<td><font color=red><INPUT NAME="UpdateOK" TYPE="TEXT"></font></td>
+</TR>
+<TR><TD ALIGN="RIGHT" COLSTART="1">Name:</TD><TD COLSTART="2"><INPUT NAME="CustName"></TD>
+<TD><INPUT NAME="CheckOut" TYPE="TEXT"></TD> 
+</TR>
+<TR><TD ALIGN="RIGHT" COLSTART="1">Address:</TD>
+<TD COLSTART="2"><INPUT NAME="CustAddress"></td></TD>
+</TR>
+<TR><TD ALIGN="RIGHT" COLSTART="1">City:</TD><TD COLSTART="2"><INPUT NAME="CustCity"></TD>
+</TR>
+<TR><TD ALIGN="RIGHT" COLSTART="1">State:</TD><TD COLSTART="2"><INPUT NAME="CustState"></TD>
+</TR>
+<TR><TD ALIGN="RIGHT" COLSTART="1">Zipcode:</TD><TD COLSTART="2"><INPUT NAME="CustZipCode"></TD>
+</TR>
+<TR><TD ALIGN="RIGHT" COLSTART="1">Phone:</TD><TD COLSTART="2"><INPUT NAME="CustPhone"></TD>
+</TR>
+<TR><td></td><td align=right><a href="javascript:doSubmit('update')">
+<img src="/webspeed31D/samples/internet/update.gif" border=0></a></td><td align=center></td>
+</tr>
+</TABLE></CENTER>
+
+<HR>
+
+</P></form></BODY></HTML>
+
+

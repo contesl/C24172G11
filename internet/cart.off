@@ -1,0 +1,12 @@
+/* HTML offsets */
+htm-file= C:\progress\wrk\internet\cart.htm
+version= 
+
+field[1]= "Message,INPUT,TEXT,fill-in,114,1,115,107"
+field[2]= "Errors,INPUT,TEXT,fill-in,117,1,117,41"
+field[3]= "DataRows,!--WSTAG,,fill-in,122,1,122,26"
+field[4]= "SubTotal,INPUT,TEXT,fill-in,126,354,126,388"
+field[5]= "Shipping,INPUT,TEXT,fill-in,128,63,128,97"
+field[6]= "SalesTax,INPUT,TEXT,fill-in,130,64,130,98"
+field[7]= "Total,INPUT,TEXT,fill-in,132,63,132,94"
+ 

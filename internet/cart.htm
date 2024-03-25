@@ -1,0 +1,183 @@
+<!--------------------------------------------------------------------
+* Copyright (C) 2002 by Progress Software Corporation ("PSC"),       *
+* 14 Oak Park, Bedford, MA 01730, and other contributors as listed   *
+* below.  All Rights Reserved.                                       *
+*                                                                    *
+* The Initial Developer of the Original Code is PSC.  The Original   *
+* Code is Progress IDE code released to open source December 1, 2000.*
+*                                                                    *
+* The contents of this file are subject to the Possenet Public       *
+* License Version 1.0 (the "License"); you may not use this file     *
+* except in compliance with the License.  A copy of the License is   *
+* available as of the date of this notice at                         *
+* http://www.possenet.org/license.html                               *
+*                                                                    *
+* Software distributed under the License is distributed on an "AS IS"*
+* basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. You*
+* should refer to the License for the specific language governing    *
+* rights and limitations under the License.                          *
+*                                                                    *
+* Contributors:                                                      *
+*                                                                    *
+--------------------------------------------------------------------->
+<!-- cart.htm -->
+
+<!-- SHOPPING CART -->
+
+<HTML>
+
+<HEAD>
+        <TITLE>SportsPro Online! Carrito de Compra</TITLE>
+        <script language="JavaScript">
+
+                < !-
+                        function isNumeric(sField) {
+                                // check to see if the entry is empty
+                                if (sField.value.length == 0) return (false);
+
+                                var RefString = "1234567890";
+
+                                for (Count = 0; Count < sField.value.length; Count++) {
+                                        TempChar = sField.value.substring(Count, Count + 1);
+                                        if (RefString.indexOf(TempChar, 0) == -1) { return (false); }
+                                }
+                                return true;
+                        }
+
+                function selectItemNotValid(Field_Name) {
+                        var SelectItem = isNumeric(Field_Name);
+                        if (SelectItem == 0) {
+                                window.alert("Only numbers are allowed, Please Reenter");
+                                Field_Name.focus();
+                                Field_Name.select();
+                                return false;
+                        }
+                        return true;
+                }
+
+                function checkFields(FieldNames) {
+                        // this creates the array and checks the fields that have been added to the global array
+                        var more = true;
+                        var c = 0;
+                        var Pos = 0;
+                        var OrgPos = 0;
+                        var NewPos = 0;
+                        var lFN = FieldNames.length;
+
+                        while (more == true) {
+                                OrgPos = Pos;
+                                Pos = FieldNames.indexOf(",", Pos + 1);
+                                if (Pos > 0) {
+                                        if (selectItemNotValid(eval(FieldNames.substring(OrgPos, Pos))) == 0) {
+                                                break;
+                                        }
+                                        NewPos = Pos + 1;
+                                        c++;
+                                }
+                                else if (c > 0) {
+                                        selectItemNotValid(eval(FieldNames.substring(NewPos, (FieldNames.length))));
+                                        break;
+                                }
+                                else break;
+                        }
+                        return;
+                }
+                ScrollSpeed = 200;  // milliseconds between scrolls
+
+                ScrollChars = 1;    // chars scrolled per time period
+
+                function ScrollMarquee() {
+
+                        window.setTimeout('ScrollMarquee()', ScrollSpeed);
+
+                        var msg = document.Cart_form.Message.value;
+
+                        document.Cart_form.Message.value = msg.substring(ScrollChars) + msg.substring(0, ScrollChars);
+
+                }
+
+                function confirmExit() {
+                        if (confirm("Are you sure you want to exit the SportsPro OnLine?")) {
+                                window.location = "/Sports2000/internet/home.html";
+                        }
+                }
+
+
+                //-->
+
+        </script>
+
+</HEAD>
+
+<!-- BODY BGCOLOR="#FFFFFF" -->
+
+<BODY BGCOLOR="#FFFFFF" onLoad="ScrollMarquee()">
+        <!--begin nav-->
+
+        <center>
+                <table border="0">
+                        <tr>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td><img src="/Sports2000/images/header.gif" usemap="#header" border="0">
+                                        <map name="header">
+                                                <area shape="rect" coords="560, 0, 600, 25"
+                                                        href="JavaScript:confirmExit()"
+                                                        onMouseOver="window.status='Exit SportsPro On-Line';return true"
+                                                        onMouseOut="window.status='';return true">
+                                        </map>
+                                </td>
+                        </tr>
+                </table>
+
+                <p>
+                        <br>
+                        <!--end nav-->
+
+
+                <H2>Contenido del Carrito de Compra</H2>
+                <P>
+
+                <!--<FORM ACTION="cart.w" METHOD=POST NAME="Cart_form">-->
+                        <INPUT TYPE="TEXT" NAME="Message" SIZE=78
+                                VALUE="   . . .    Este es el contenido de su carrito hasta el momento.....">
+                        <br>
+
+                        <TABLE WIDTH=90% BORDER=1>
+
+                                <TR>
+                                        <TD ALIGN="center"><B>Item #</B></TD>
+                                        <TD AlIGN="center"><B>Descripcion</B></TD>
+                                        <TD ALIGN="center"><B>Precio Unitario</B></TD>
+                                        <TD ALIGN="center"><B>Cantida Pedida</B></TD>
+                                        <TD ALIGN="Center"><B>Total Item</B></TD>
+                                </TR>
+                                <tr>
+                                        <TD ALIGN="center">17</TD>
+                                        <TD AlIGN="center">Pelotas de tenis</TD>
+                                        <TD ALIGN="center">5.950</TD>
+                                        <TD ALIGN="center">10</TD>
+                                        <TD ALIGN="Center">59.950</TD>
+                                </tr>
+                        </TABLE>
+                                <FORM METHOD='POST' ACTION="/Sports2000/internet/order.htm"'>
+                                        <INPUT TYPE='submit' name='Add' value='Completar la compra'>
+                                        <INPUT TYPE='submit' name='View' value='Vaciar el Carrito!'>
+
+                                </FORM>
+                        <br></br>
+                        <A HREF="catalog.html"><img src="/Sports2000/images/catalog.gif" border=0></A>
+                        <br></br>
+                        <hr>
+                        <CENTER>
+                                <TABLE>
+                                        <TR>
+                                                <TD valign=top>
+                                                        <FONT>
+                                                                <h3>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Kierszenowicz, Tomas / Conte, Sergio Luis <h3>
+                                                        </FONT> </h3></FONT>
+                                                </TD>
+                                        </TR>
+                                </TABLE>
+</BODY>
+
+</HTML>
