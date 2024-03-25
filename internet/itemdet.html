@@ -1,66 +1,46 @@
-<!--------------------------------------------------------------------
-* Copyright (C) 2000 by Progress Software Corporation ("PSC"),       *
-* 14 Oak Park, Bedford, MA 01730, and other contributors as listed   *
-* below.  All Rights Reserved.                                       *
-*                                                                    *
-* The Initial Developer of the Original Code is PSC.  The Original   *
-* Code is Progress IDE code released to open source December 1, 2000.*
-*                                                                    *
-* The contents of this file are subject to the Possenet Public       *
-* License Version 1.0 (the "License"); you may not use this file     *
-* except in compliance with the License.  A copy of the License is   *
-* available as of the date of this notice at                         *
-* http://www.possenet.org/license.html                               *
-*                                                                    *
-* Software distributed under the License is distributed on an "AS IS"*
-* basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. You*
-* should refer to the License for the specific language governing    *
-* rights and limitations under the License.                          *
-*                                                                    *
-* Contributors:                                                      *
-*                                                                    *
---------------------------------------------------------------------->
 <HTML>
+
 <HEAD>
-<TITLE>Catalog Item Details</TITLE>
+    <TITLE>Catalogo en Linea</TITLE>
 </HEAD>
 
 <BODY BGCOLOR="#ffffff">
 
-<script language="JavaScript">
-function confirmExit() {
-   if (confirm("Are you sure you want to exit SportsPro OnLine?")) {
-      window.location='home.w';
-   }
-}
-</script>
+    <script language="JavaScript">
+        function confirmExit() {
+            if (confirm("Seguro que quire salir de SportsPro OnLine?")) {
+                window.location = 'home.html';
+            }
+        }
+    </script>
 
-<center>
-<table border="0">
-    <tr>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td><img src="`RootURL`/samples/internet/header.gif" usemap="#header" border="0">
-            <map name="header">
-            <area shape="rect" coords="560, 0, 600, 25" href="JavaScript:confirmExit()"
-              onMouseOver="window.status='Exit SportsPro On-Line';return true"
-              onMouseOut="window.status='';return true">
-            </map></td>
-    </tr>
-</table>
+    <center>
+        <table border="0">
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td><img src="/Sports2000/images/header.gif" usemap="#header" border="0">
+                    <map name="header">
+                        <area shape="rect" coords="560, 0, 600, 25" href="JavaScript:confirmExit()"
+                            onMouseOver="window.status='Exit SportsPro On-Line';return true"
+                            onMouseOut="window.status='';return true">
+                    </map>
+                </td>
+            </tr>
+        </table>
 
-<p><br><br></p>
+        <p><br><br></p>
 
-<script language="SpeedScript">
+        <script language="SpeedScript">
 
-  DEF VAR gif-image AS CHAR NO-UNDO.
+  DEF VAR gif - image AS CHAR NO - UNDO.
  
-  FIND item WHERE item.itemnum = INTEGER(get-field("Item")) NO-LOCK NO-ERROR.
+  FIND item WHERE item.itemnum = INTEGER(get - field("Item")) NO - LOCK NO - ERROR.
   IF NOT AVAILABLE item THEN
-    {&OUT} 
-      '~<script language="JavaScript"~>~n'
-      'window.alert("Item not found.  Returning home.");~n'
-      'window.location="home.r";~n'
-      '~</script~>~n'.
+            {& OUT }
+            '~<script language="JavaScript"~>~n'
+            'window.alert("Item not found.  Returning home.");~n'
+            'window.location="home.r";~n'
+            '~</script~>~n'.
 
   CASE get-field("Category"):
     WHEN "Golf"     THEN gif-image = "new.gif".
@@ -73,75 +53,83 @@ function confirmExit() {
   END CASE. 
 
 </script>
-    
-<IMG SRC="`RootURL`/samples/internet/cat`STRING(item.itemnum,'99999')`.jpg" ALIGN="RIGHT" WIDTH=285 HEIGHT=166><IMG SRC="`RootURL`/samples/internet/`gif-image`" ALIGN="RIGHT"><B>Item Num# `item.itemnum` - `item.itemname`</B><BR>
 
-<TABLE BORDER="2">
-<TR>
-  <TH>Inventory Information</TH>
-</TR>
-<TR >
-  <TD> On Hand Qty</TD>
-  <TD> `item.onhand`</TD>
-</TR>
-<TR >
-  <TD> On Order</TD>
-  <TD> `item.onorder`</TD>
-</TR>
-<TR >
-  <TD> Catalog Page</TD>
-  <TD> `item.catpage`</TD>
-</TR>
-</TABLE>
+        <IMG SRC="/Sports2000/images/cat00017.jpg" ALIGN="RIGHT" WIDTH=285 HEIGHT=166><img
+            scr="/Sports2000/images/clear.gif" ALIGN="RIGHT"><B>Numero de Item 17 -
+            Pelotas de Tenis</B><BR>
 
-<P><P><FORM METHOD='POST' ACTION='cart.w'>
-<INPUT TYPE='submit' name='Add'  value='Add To Your Cart!'>
-<INPUT TYPE='submit' name='View' value='View Cart Contents!'>
-<INPUT TYPE='hidden' name='vItemNum' value='`item.itemnum`'>
-<INPUT TYPE='hidden' name='vCustNum' value=''>
-</FORM>
-<A HREF='catitems.html?Category=`get-field("Category")`'>Return to Item Browser</A><BR><A HREF='catalog.html'>Back to Catalog</A>
+        <TABLE BORDER="2">
+            <TR>
+                <TH>Informacion de Inventario</TH>
+            </TR>
+            <TR>
+                <TD> Cantidad Disponible</TD>
+                <TD> 11.391</TD>
+            </TR>
+            <TR>
+                <TD> Pedidos</TD>
+                <TD> 1.060</TD>
+            </TR>
+            <TR>
+                <TD> Pagina de Catalogo</TD>
+                <TD> 17</TD>
+            </TR>
+        </TABLE>
 
-<HR>
+        <P>
+        <P>
+        <FORM METHOD='POST' ACTION="/Sports2000/internet/cart.htm"'>
+            <INPUT TYPE='submit' name='Add' value='Sumar al Carrito!'>
+            <INPUT TYPE='submit' name='View' value='Ver el Carrito!'>
+            <INPUT TYPE='hidden' name='vItemNum' value='`item.itemnum`'>
+            <INPUT TYPE='hidden' name='vCustNum' value=''>
+        </FORM>
+        <A href="/Sports2000/internet/catitemsStc.html">Volver al Item</A><BR>
+        <A HREF="catalog.html"><img src="/Sports2000/images/catalog.gif" border=0></A>
 
-<TABLE>
-<TR> 
-<TD valign=top>
-<FONT >Powered by <br><IMG
-ALIGN = "bottom" SRC="`RootURL`/samples/internet/wslogo.gif" ALT="http://webspeed.progress.com"> </FONT> 
+        <HR>
 
-</TD>
-<TD></TD>
-<TD></TD>
-<TD></TD>
-<TD></TD>
-<TD></TD>
-<TD></TD>
-<TD valign=top>
-<applet codebase=`RootURL`/samples/internet code=Credits width=350 height=30>
-<param name=startDelay value=10>
-<param name=endDelay value=10>
-<param name=defaultDelay value=10>
-<param name=speed value=40>
-<param name=defaultFontSize value=24>
+        <CENTER>
+            <TABLE>
+                <TR>
+                    <TD valign=top>
+                        <FONT>
+                            <h3>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Kierszenowicz, Tomas / Conte, Sergio Luis <h3>
+                        </FONT>
 
-<param name=text0 value="Purchase this item!">
-<param name=delay0 value=60>
-<param name=fontStyle0 value=BOLD>
+                    </TD>
+                    <TD></TD>
+                    <TD></TD>
+                    <TD></TD>
+                    <TD></TD>
+                    <TD></TD>
+                    <TD></TD>
+                    <TD valign=top>
+                        <applet codebase=`RootURL`/samples/internet code=Credits width=370 height=30>
+                            <param name=startDelay value=10>
+                            <param name=endDelay value=10>
+                            <param name=defaultDelay value=10>
+                            <param name=speed value=40>
+                            <param name=defaultFontSize value=24>
 
-<param name=text1 value="or view your selected items!">
-<param name=delay1 value=40>
-<param name=fontColor1 value="blue">
-<param name=fontName1 value="TimesRoman">
-<param name=fontStyle1 value="BOLDITALIC">
-<param name=fontSize1 value=18>
+                            <param name=text0 value="Welcome to the Online Catalog!">
+                            <param name=delay0 value=60>
+                            <param name=fontStyle0 value=BOLD>
 
-</applet>
-</TD>
-</TR>
-</TABLE>
-</CENTER>
+                            <param name=text1 value="Check out our new inventory!">
+                            <param name=delay1 value=40>
+                            <param name=fontColor1 value="blue">
+                            <param name=fontName1 value="TimesRoman">
+                            <param name=fontStyle1 value="BOLDITALIC">
+                            <param name=fontSize1 value=18>
 
+                        </applet>
+                    </TD>
+                </TR>
+            </TABLE>
+        </CENTER>
 
-</P></BODY></HTML>
+        </P>
+</BODY>
 
+</HTML>
