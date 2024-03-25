@@ -1,25 +1,4 @@
-<!--------------------------------------------------------------------
-* Copyright (C) 2002 by Progress Software Corporation ("PSC"),       *
-* 14 Oak Park, Bedford, MA 01730, and other contributors as listed   *
-* below.  All Rights Reserved.                                       *
-*                                                                    *
-* The Initial Developer of the Original Code is PSC.  The Original   *
-* Code is Progress IDE code released to open source December 1, 2000.*
-*                                                                    *
-* The contents of this file are subject to the Possenet Public       *
-* License Version 1.0 (the "License"); you may not use this file     *
-* except in compliance with the License.  A copy of the License is   *
-* available as of the date of this notice at                         *
-* http://www.possenet.org/license.html                               *
-*                                                                    *
-* Software distributed under the License is distributed on an "AS IS"*
-* basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. You*
-* should refer to the License for the specific language governing    *
-* rights and limitations under the License.                          *
-*                                                                    *
-* Contributors:                                                      *
-*                                                                    *
---------------------------------------------------------------------->
+
 <!-- order.htm -->
 <HTML>
 
@@ -29,7 +8,7 @@
 		var nMonth = 0;
 		function confirmExit() {
 		   if (confirm("Seguro que quiere salir de SportsPro OnLine?")) {
-			  window.location='home.html';
+			  window.location='/index.html';
 		   }
 		}
 		
@@ -132,7 +111,7 @@
 	</script>
 
 
-	<TITLE>SportsPro Online! Procesamiento de la Orden</TITLE>
+	<TITLE>SportsPro En Linea! Procesamiento de la Orden</TITLE>
 </HEAD>
 
 <BODY BGCOLOR="#FFFFFF" onLoad="ScrollMarquee()">
@@ -141,7 +120,7 @@
 		<table border="0">
 			<tr>
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-				<td><img src="/Sports2000/images/header.gif" usemap="#header" border="0">
+				<td><img src="/images/header.gif" usemap="#header" border="0">
 					<map name="header">
 						<area shape="rect" coords="560, 0, 600, 25" href="JavaScript:confirmExit()"
 							onMouseOver="window.status='Exit SportsPro On-Line';return true"
@@ -155,7 +134,7 @@
 		<p>
 
 			<HR>
-		<FORM ACTION="cart.w?CompleteOrder" METHOD="POST" NAME="Order_form">
+		<FORM ACTION="cart.html?CompleteOrder" METHOD="POST" NAME="Order_form">
 			<INPUT NAME="Marquee" SIZE=78 VALUE="   . . .    Tiene 15 minutos para completar la transaccion!">
 			<P>
 				<B><I>
@@ -231,8 +210,8 @@
 
 		</FORM>
 
-		<P><A HREF="/Sports2000/internet/cart.htm">Volver al contenido del carrito</A> <BR>
-			<A HREF="/Sports2000/internet/catalog.html">Continuar Comprando...Volver al Catalogo</A>
+		<P><A HREF="/internet/cart.htm">Volver al contenido del carrito</A> <BR>
+			<A HREF="/internet/catalog.html">Continuar Comprando...Volver al Catalogo</A>
 		</P>
 
 		<CENTER>
@@ -246,27 +225,7 @@
 					<TD></TD>
 					<TD></TD>
 					<TD></TD>
-					<TD valign=top>
-						<applet codebase=/webspeed31D/samples/internet code=Credits width=350 height=30>
-							<param name=startDelay value=10>
-							<param name=endDelay value=10>
-							<param name=defaultDelay value=10>
-							<param name=speed value=40>
-							<param name=defaultFontSize value=24>
-
-							<param name=text0 value="Complete your Order!">
-							<param name=delay0 value=60>
-							<param name=fontStyle0 value=BOLD>
-
-							<param name=text1 value="or continue shopping!">
-							<param name=delay1 value=40>
-							<param name=fontColor1 value="blue">
-							<param name=fontName1 value="TimesRoman">
-							<param name=fontStyle1 value="BOLDITALIC">
-							<param name=fontSize1 value=18>
-
-						</applet>
-					</TD>
+					
 				</TR>
 			</TABLE>
 		</CENTER>
