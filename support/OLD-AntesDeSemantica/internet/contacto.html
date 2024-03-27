@@ -4,38 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <script>
-        /*
-        function confirmExit() {
-           if (confirm("Esta seguro que quire volve a la pagina principal?")) {
-              window.location = '/index.html';
-           }
-        }*/
-        function confirmExit() {
-            window.location = '/index.html';
-        }
-    </script>
         <!----------------------------------------------->
         <!--Aca insertamos la CSS externa-->
         <link rel="stylesheet" href="/style/estilos.css">
         <!----------------------------------------------->
-
 </head>
 <body>
-        <header>
-            <figure>
-                <img id="headerGIF" src="../images/header.gif" usemap="#header">
-                <map name="header">
-                    <area shape="rect" coords="560, 0, 600, 25" href="JavaScript:confirmExit()"
-                        onmouseover="window.status='Exit SportsPro On-Line';return true"
-                        onmouseout="window.status='';return true">
-                </map>
-            </figure>
-        
-            <h1 id="headerSubtitulo">Formulario de Contacto</h1>
-        </header>
-<main>
-   <article>
+        <a href="/index.html" onmouseover="window.status='Home';return true" onmouseout="window.status='';return true">
+            <img src="/images/header1.gif" border=0></a>
     <form>
     
         <input type="text" name="nombre" value="Juan Perez">
@@ -73,11 +49,24 @@
         <input type=button value="Texto escrito en el botón">
     
     </form>
-    </article>
-</main>
-    <footer id="fDescripcionEquipo">
-        <hr>
-        <h3>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Kierszenowicz, Tomas / Conte, Sergio Luis <h3>
-    </footer>
+            <a href="/index.html" onmouseover="window.status='Home';return true" onmouseout="window.status='';return true">
+                <img src="/images/exit.gif" border=0></a>
+                <br>
+                <hr>
+                <TABLE>
+                    <TR>
+                        <TD valign=top>
+                            <FONT>
+                                <h3>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Kierszenowicz, Tomas / Conte, Sergio Luis <h3>
+                            </FONT>
+                
+                        <TD></TD>
+                        <TD></TD>
+                        <TD></TD>
+                        <TD></TD>
+                        <TD></TD>
+                        <TD></TD>
+                    </TR>
+                </TABLE>
 </body>
 </html>

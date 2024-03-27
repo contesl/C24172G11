@@ -1,0 +1,92 @@
+<HTML>
+
+<HEAD>
+  <META NAME="wsoptions" CONTENT="no-output">
+  <TITLE>Catalogo en Linea</TITLE>
+
+    <!----------------------------------------------->
+    <!--Aca insertamos la CSS externa-->
+    <link rel="stylesheet" href="../style/estilos.css">
+    <!----------------------------------------------->
+
+</HEAD>
+
+<BODY BGCOLOR="#ffffff">
+
+  <script language="JavaScript">
+    function confirmExit() {
+      if (confirm("Seguro que quire salir de SportsPro OnLine?")) {
+        window.location = '/index.html';
+      }
+    }
+  </script>
+      <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const Categoria = urlParams.get("Category");
+      </script>
+
+  <center>
+    <table border="0">
+      <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td><img src="../images/header.gif" usemap="#header" border="0">
+          <map name="header">
+            <area shape="rect" coords="560, 0, 600, 25" href="JavaScript:confirmExit()"
+              onMouseOver="window.status='Exit SportsPro On-Line';return true"
+              onMouseOut="window.status='';return true">
+          </map>
+        </td>
+      </tr>
+    </table>
+
+    <br>
+
+    <CENTER>
+      <H2>Categoria: Tenis</H2>
+      <CENTER>
+
+        <TABLE BORDER>
+          <TH>Item</TH>
+          <TH>Item #</TH>
+          <TH>Description</TH>
+          <TH>Price</TH>
+          </TR>
+          <TR>
+            <TD><a href="../internet/itemdet.html">Pelotas de Tenis</A></TD>
+            <TD>17</TD>
+            <TD>Tres por paquete. Disponible en blanco o amarillo fluorescente.</TD>
+            <TD>5.950</TD>
+          </TR>
+        </TABLE>
+        <P>
+          <A HREF="../internet/catalog.html"><img src="../images/catalog.gif" border=0></A>
+      </center>
+
+      <HR>
+      
+      <CENTER>
+        <TABLE>
+          <TR>
+            <TD valign=top>
+              <FONT>
+                <h3>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Kierszenowicz, Tomas / Conte, Sergio Luis <h3>
+              </FONT>
+      
+            </TD>
+            <TD></TD>
+            <TD></TD>
+            <TD></TD>
+            <TD></TD>
+            <TD></TD>
+            <TD></TD>
+  
+          </TR>
+        </TABLE>
+      </CENTER>
+        
+
+
+      </P>
+</BODY>
+
+</HTML>

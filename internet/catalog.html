@@ -2,95 +2,63 @@
 
 <HEAD>
     <TITLE>Catalogo en Linea</TITLE>
-    <script>
-        function confirmExit() {
-            if (confirm("Esta seguro que quire volve a la pagina principal?")) {
-                window.location = '/index.html';
-            }
-        }
-    </script>
-
+    <script type="text/javascript" src="../js/javascript.js"></script>
     <!----------------------------------------------->
     <!--Aca insertamos la CSS externa-->
-    <link rel="stylesheet" href="./style/estilos.css">
+    <link rel="stylesheet" href="../style/estilos.css">
     <!----------------------------------------------->
 
 </HEAD>
 
-<BODY BGCOLOR="white">
+<BODY>
+    <header>
+        <figure>
+            <img id="headerGIF" src="../images/header.gif" usemap="#header">
+            <map name="header">
+                <area shape="rect" coords="560, 0, 600, 25" href="JavaScript:confirmExit()"
+                    onmouseover="window.status='Exit SportsPro On-Line';return true"
+                    onmouseout="window.status='';return true">
+            </map>
+        </figure>
 
-    <center>
-        <table border="0">
-            <tr>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td><img src="../images/header.gif" usemap="#header" border="0">
-                    <map name="header">
-                        <area shape="rect" coords="560, 0, 600, 25" href="JavaScript:confirmExit()"
-                            onMouseOver="window.status='Exit SportsPro On-Line';return true"
-                            onMouseOut="window.status='';return true">
-                    </map>
-                </td>
-            </tr>
-        </table>
-
-        <p><br>
-        <p>
-
-        <H1>Tienda En Linea SportsPro</H1>
-        <p>Seleccione un deporte que le interese y a comprar!</p>
-        <table border="0">
-            <tr>
-                <td align="center" valign="top"><a href="../internet/catitems.html?Category=Golf"><img
-                            src="../images/golf.gif" alt="Golf" border="0" width="100" height="100"></a></td>
-                <td>&nbsp;&nbsp;&nbsp;</td>
-                <td align="center" valign="top"><a href="../internet/catitems.html?Category=Skiing"><img
-                            src="../images/skiing.gif" alt="Skiing" border="0" vspace="5" width="100" height="100"></a>
-                </td>
-                <td>&nbsp;&nbsp;&nbsp;</td>
-                <td align="center" valign="top"><a href="../internet/catitems.html?Category=Tennis"><img
-                            src="../images/tennis.gif" alt="Tennis" border="0" vspace="3" width="100" height="100"></a>
-                </td>
-            </tr>
-            <tr>
-                <td align="center" valign="top"><a href="../internet/catitems.html?Category=Diving"><img
-                            src="../images/swimming.gif" alt="Diving" border="0" vspace="2" width="100" height="100"></a>
-                </td>
-                <td>&nbsp;&nbsp;&nbsp;</td>
-                <td align="center" valign="top"><a href="../internet/catitems.html?Category=Soccer"><img
-                            src="../images/soccer.gif" alt="Soccer" border="0" vspace="2" width="100" height="100"></a>
-                </td>
-                <td>&nbsp;&nbsp;&nbsp;</td>
-                <td align="center" valign="top"><a href="../internet/catitems.html?Category=Miscellaneous"><img
-                            src="../images/misc.gif" alt="Miscellaneous" border="0" width="100" height="100"></a></td>
-            </tr>
-        </table>
-
-    </CENTER>
-
-    <HR>
-
-    <CENTER>
-        <TABLE>
-            <TR>
-                <TD valign=top>
-                    <FONT>
-                        <h3>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Kierszenowicz, Tomas / Conte, Sergio Luis
-                            <h3>
-                    </FONT>
-
-                </TD>
-                <TD></TD>
-                <TD></TD>
-                <TD></TD>
-                <TD></TD>
-                <TD></TD>
-                <TD></TD>
-
-
-            </TR>
-        </TABLE>
-    </CENTER>
-    </P>
+        <h1 id="headerSubtitulo">Tienda En Linea SportsPro</h1>
+    </header>
+    <main>
+        <article>
+            <h2 id="headerSubtitulo">Seleccione un deporte que le interese y a comprar!</h2>
+            <table class="tabla-centrada">
+                <tr>
+                    <td><a href="../internet/catitems.html?Category=Golf">
+                        <img id="imagen-catalogo" src="../images/golf.gif" alt="Golf"></a></td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><a href="../internet/catitems.html?Category=Skiing">
+                        <img id="imagen-catalogo" src="../images/skiing.gif" alt="Skiing"></a>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><a href="../internet/catitems.html?Category=Tennis"><img id="imagen-catalogo"
+                                src="../images/tennis.gif" alt="Tennis"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="../internet/catitems.html?Category=Diving"><img
+                                id="imagen-catalogo" id="imagen-catalogo" src="../images/swimming.gif" alt="Diving"></a>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><a href="../internet/catitems.html?Category=Soccer"><img
+                                id="imagen-catalogo" src="../images/soccer.gif" alt="Soccer"></a>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td><a href="../internet/catitems.html?Category=Miscellaneous"><img
+                                id="imagen-catalogo" src="../images/misc.gif" alt="Miscellaneous"></a>
+                    </td>
+                </tr>
+            </table>
+        </article>
+    </main>
+    <footer id="fDescripcionEquipo">
+        <hr>
+        <h3>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Kierszenowicz, Tomas / Conte, Sergio Luis <h3>
+    </footer>
 </BODY>
 
 </HTML>

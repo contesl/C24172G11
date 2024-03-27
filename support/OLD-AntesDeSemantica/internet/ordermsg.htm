@@ -1,0 +1,283 @@
+<!--------------------------------------------------------------------
+* Copyright (C) 2002 by Progress Software Corporation ("PSC"),       *
+* 14 Oak Park, Bedford, MA 01730, and other contributors as listed   *
+* below.  All Rights Reserved.                                       *
+*                                                                    *
+* The Initial Developer of the Original Code is PSC.  The Original   *
+* Code is Progress IDE code released to open source December 1, 2000.*
+*                                                                    *
+* The contents of this file are subject to the Possenet Public       *
+* License Version 1.0 (the "License"); you may not use this file     *
+* except in compliance with the License.  A copy of the License is   *
+* available as of the date of this notice at                         *
+* http://www.possenet.org/license.html                               *
+*                                                                    *
+* Software distributed under the License is distributed on an "AS IS"*
+* basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. You*
+* should refer to the License for the specific language governing    *
+* rights and limitations under the License.                          *
+*                                                                    *
+* Contributors:                                                      *
+*                                                                    *
+--------------------------------------------------------------------->
+<!-- order.htm -->
+<HTML>
+<HEAD>  
+<script language="JavaScript">
+<!--
+var nMonth = 0;
+function confirmExit() {
+   if (confirm("Are you sure you want to exit SportsPro OnLine?")) {
+      window.location='home.w';
+   }
+}
+
+function isMonth(mnth) {
+	m = mnth.toUpperCase();
+	if (m == "JAN") {nMonth = 1;}
+	else if ( m == "FEB") {nMonth = 2;}
+	else if ( m == "MAR") {nMonth = 3;}
+	else if ( m == "APR") {nMonth = 4;}
+	else if ( m == "MAY") {nMonth = 5;}
+	else if ( m == "JUN" ) {nMonth = 6;}
+	else if ( m == "JUL"  ) {nMonth = 7;}
+	else if ( m == "AUG" ) {nMonth = 8;}
+	else if ( m == "SEP" ) {nMonth = 9;}
+	else if ( m == "OCT" ) {nMonth = 10;}
+	else if ( m == "NOV" ) {nMonth = 11;}
+	else if ( m == "DEC" ) {nMonth = 12;}
+
+	if ( nMonth > 0 ) {return true;}
+	return false;
+}
+function isValidDate( date_Field ){
+	/* 	if the month is valid, we can then use JavaScript to return what it thinks is the month.  
+		If the return value does not match the entered value, this is not a valid date.  */
+
+	var sDate = date_Field.value;
+	var vDate = new Date( date_Field.value );
+	var vjMonth = vDate.getMonth();
+	var sMonth = vDate.toString();
+	var nDelim = 0;
+	var subMonth;
+	var bValid = false;
+
+	// lets see if this is '/' delimited, or space delimited
+	nDelim = sDate.indexOf("/");
+
+	if (nDelim > 0) { 		 //  '/' delimited now we need to get the numeric value
+		nMonth = parseInt(sDate.substring(0,nDelim), 10);
+		if (nMonth >= 1 && nMonth <= 12) {
+			// window.alert("valid Month value " + nMonth);
+			bValid =  true;
+			}
+		else {				// window.alert("invalid " + nMonth);
+			 }
+		}			else  { 	// space delimited, but is it still numeric or alpha???
+		nDelim = sDate.indexOf(" ");
+		if (nDelim  ==1 || nDelim == 2) {		// should be numeric
+			nMonth = parseInt(sDate.substring(0,nDelim), 10);
+			if (nMonth >= 1 && nMonth <= 12) {
+				// window.alert("valid " + nMonth);
+				bValid = true;
+				}
+			else { 
+				// window.alert("invalid month " + nMonth); 
+				}
+			}
+		else if  (isMonth(sDate.substring(0,3))) {
+				// window.alert("valid month " + sDate.substring(0,3));
+				bValid = true;
+				}
+		else 	{
+			// window.alert("invalid alpha month " + sDate.substring(0,3));
+			}
+		}
+
+
+	if (bValid == true) { 
+		// window.alert("nMonth: " + nMonth);
+		// window.alert("vjMonth: " + vjMonth);
+
+		if (nMonth == (vjMonth + 1)) {
+			// window.alert ("The Date is Valid");
+			return true; }
+		}
+
+	window.alert ("Date is Invalid, please reenter");
+
+	date_Field.focus();
+	date_Field.select();
+
+return false;
+}               
+
+
+//-->
+</script>
+
+
+<TITLE>SportsPro Online! Order Processing</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<center>
+<table border="0">
+    <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td><img src="/webspeed31D/samples/internet/header.gif" usemap="#header" border="0">
+            <map name="header">
+            <area shape="rect" coords="560, 0, 600, 25" href="JavaScript:confirmExit()"
+              onMouseOver="window.status='Exit SportsPro On-Line';return true"
+              onMouseOut="window.status='';return true">
+            </map></td>
+    </tr>
+</table>
+
+<p><br>
+<p>     
+
+<HR>
+<FORM ACTION="cart.w?CompleteOrder" METHOD="POST" NAME="Order_form">
+<P> 
+<B><I><FONT SIZE="+2"><INPUT TYPE="TEXT" NAME="CustomerName"></FONT><I><B> <P>
+<TABLE BORDER=0 WIDTH=90%>
+<TR>                
+<TD ALIGN="RIGHT">Order Number:</TD>
+<TD><B><INPUT TYPE="TEXT" NAME="OrderNum" SIZE=12></B></TD>
+<TD ALIGN="RIGHT">Member ID:</TD>         
+<TD><B><INPUT TYPE="TEXT" NAME="CustID" SIZE=12></B></TD>
+<TD ALIGN="RIGHT">Order Date:</TD>         
+<TD><B><INPUT TYPE="TEXT" NAME="OrderDate" SIZE=12></B></TD>
+</TR>                      
+</TABLE>       
+
+<P>
+
+<B><I>Contact Information</B></I> <P>
+<TABLE BORDER=0 WIDTH=90% CELLPADDING=1 CELLSPACING=1>
+
+<TR>
+<TD ALIGN="RIGHT">Address:</TD>
+<TD><B><INPUT NAME="Address" SIZE=28></B></TD>
+</TR>
+
+<TR>
+<TD ALIGN="RIGHT"></TD>
+<TD><B><INPUT NAME="Address2" SIZE=28></B></TD>
+</TR>                                    
+
+<TR>
+<TD ALIGN="RIGHT">City, State, Zip:</TD>
+<TD><B><INPUT NAME="CSZ" SIZE=28></B></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT">Phone:</TD>
+<TD><B><INPUT NAME="Phone" SIZE=28></B></TD>
+</TR>          
+</TABLE>       
+
+<HR>
+
+<TABLE WIDTH=90% BORDER=1>
+
+<TR>
+  <TD ALIGN="center"><B>Qty.</B></TD>
+  <TD ALIGN="center"><B>Product No.</B></TD>
+  <TD ALIGN="center"><B>Product Name</B></TD>
+  <TD ALIGN="right"><B>Unit Price</B></TD>
+  <TD ALIGN="right"><B>Ext. Price</B></TD>
+  <TD ALIGN="CENTER"><B>Backorder</B></TD>
+</TR>
+
+<!--WSTAG NAME="DataRows">
+
+<TR><TD ALIGN="center">
+
+<TR><TD COLSPAN=3 ROWSPAN=4 ALIGN="center">&nbsp</TD>
+<TD ALIGN="right"><B>Subtotal: </B></TD><TD ALIGN="right"><INPUT TYPE="TEXT" NAME="SubTotal"></TD></TR>
+
+<TR><TD ALIGN="right"><B>Shipping: </B></TD><TD ALIGN="right"><INPUT TYPE="TEXT" NAME="Shipping"><BR></TD></TR>
+
+<TR><TD ALIGN="right"><B>Sales Tax: </B></TD><TD ALIGN="right"><INPUT TYPE="TEXT" NAME="SalesTax"><BR></TD></TR>
+
+<TR><TD ALIGN="right"><B>Total: </B></TD><TD ALIGN="right"><B><INPUT TYPE="TEXT" NAME="OrderTotal"></B><BR></TD></TR>
+
+<TD COLSPAN=5 ALIGN="center"><FONT SIZE=-1>(Actual Shipping costs and applicable Sales Tax will be determined when order is placed)</TD></TR>
+
+</TABLE>
+
+<HR>
+
+<TABLE>       
+<TR> 
+  <TD ALIGN="RIGHT"><B>Shipping Method:</B></TD>
+  <TD COLSPAN=2><INPUT TYPE="TEXT" NAME="ShippingMethod"></TD>                        
+  <TD ALIGN="RIGHT"><B>Terms:</B></TD>
+  <TD COLSPAN=2><INPUT TYPE="TEXT" NAME="Terms"></TD>
+</TR>                                              
+<TR> 
+  <TD ALIGN="RIGHT"><B>PO#:</B></TD>
+  <TD COLSPAN=2><INPUT TYPE="TEXT" NAME="PO"></TD>
+  <TD ALIGN="RIGHT"><B>Special Instructions:</B></TD>
+  <TD COLSPAN=2><INPUT TYPE="TEXT" NAME="Instructions"></TD>
+</TR>                                           
+<TR>
+<TD ALIGN="RIGHT"><B>Promise Date:</B></TD>
+<TD COLSPAN=2><INPUT TYPE="TEXT" NAME="PromiseDate"></TD>
+</TR>
+</TABLE>
+<HR>
+<TABLE>
+<TR>
+<TD> Retail Total: </TD><TD><B><INPUT TYPE="TEXT" NAME="Retail"></B></TD>
+<TD> Your Discount: </TD><TD><B><INPUT TYPE="TEXT" NAME="Discount"></B></TD>
+<TD> Total: </TD><TD><B><INPUT TYPE="TEXT" NAME="Total"></B></TD>
+</TR>
+</TABLE>                
+
+<P>
+
+</FORM>
+
+</P>
+<HR>
+<CENTER>
+<TABLE>
+<TR> 
+<TD valign=top>
+<FONT >Powered by <br><IMG
+ALIGN = "bottom" SRC="/webspeed31D/samples/internet/wslogo.gif" ALT="http://webspeed.progress.com"> </FONT> 
+
+</TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD></TD>
+<TD valign=top>
+<applet codebase=/webspeed31D/samples/internet code=Credits width=350 height=30>
+<param name=startDelay value=10>
+<param name=endDelay value=10>
+<param name=defaultDelay value=10>
+<param name=speed value=40>
+<param name=defaultFontSize value=24>
+
+<param name=text0 value="Thank you for your Order!">
+<param name=delay0 value=60>
+<param name=fontStyle0 value=BOLD>
+
+<param name=text1 value="Please visit us again!">
+<param name=delay1 value=40>
+<param name=fontColor1 value="blue">
+<param name=fontName1 value="TimesRoman">
+<param name=fontStyle1 value="BOLDITALIC">
+<param name=fontSize1 value=18>
+
+</applet>
+</TD>
+</TR>
+</TABLE>
+</CENTER>
+</P></BODY></HTML>
