@@ -1,5 +1,7 @@
 function confirmExit() {
-    window.location = '/index.html';
+    if (confirm("¿Está seguro que quiere volver a la página principal?")) {
+        window.location = '../index.html';
+    }
 }
 function ScrollMarquee() {
 
