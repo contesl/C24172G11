@@ -40,6 +40,7 @@
     margin: 0 auto;
 }
 
+
 .imagen {
     height: 430;
     width: 572;
@@ -47,6 +48,7 @@
     display: block;
     margin: 0 auto;
 }
+
 
 #imagen-catalogo {
     display: block;
@@ -64,13 +66,14 @@
 
 #headerGIF {
     display: block;
-    margin: 0 auto
+    margin: 0 auto;
+    object-fit: cover
 }
 
 #cabecera {
     display: "center"
 }
 
-.markesina{
-        display: "center"
+.markesina {
+    display: "center"
 }
