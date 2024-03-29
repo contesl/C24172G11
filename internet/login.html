@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <script type="text/javascript" src="../js/javascript.js"></script>
+   
+        <!----------------------------------------------->
+        <!--Aca insertamos la CSS externa-->
+        <link rel="stylesheet" href="../style/estilos.css">
+        <!----------------------------------------------->
+</head>
+<body>
+    <header>
+        <figure>
+            <img id="headerGIF" src="../images/header.gif" usemap="#header">
+            <map name="header">
+                <area shape="rect" coords="560, 0, 600, 25" href="JavaScript:confirmExit()"
+                    onmouseover="window.status='Exit SportsPro On-Line';return true"
+                    onmouseout="window.status='';return true">
+            </map>
+        </figure>
+    
+        <h1 id="headerSubtitulo">Inciar sesión</h1>
+        <section class="login-container">
+            <section class="login-box">
+                <form>
+                    <input type="text" name="username" placeholder="Nombre de usuario" required><br>
+                    <input type="password" name="password" placeholder="Contraseña" required><br>
+                    <input class="ingresar" type="submit" value="Ingresar">
+                </form>
+                <a class="forgot-password" href="#">¿Olvidaste tu nombre de usuario y/o contraseña?</a>
+            </section>
+        </section>
+    </header>
+    <footer id="fDescripcionEquipo">
+        <hr>
+        <h3>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Kierszenowicz, Tomas / Conte, Sergio Luis <h3>
+     </footer>    
+</body>
+</html>
