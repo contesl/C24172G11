@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in</title>
+    <title>Sign up</title>
     <script type="text/javascript" src="../js/javascript.js"></script>
    
         <!----------------------------------------------->
@@ -22,16 +22,26 @@
             </map>
         </figure>
     
-        <h1 id="headerSubtitulo">Inciar sesión</h1>
+        <h1 id="headerSubtitulo">Crear cuenta</h1>
         <section class="form-container">
             <section class="form-box">
                 <form>
-                    <input type="text" name="username" placeholder="Nombre de usuario" required><br>
-                    <input type="password" name="password" placeholder="Contraseña" required><br>
-                    <input class="ingresar" type="submit" value="Ingresar">
+                    <label for="nombre">Tu nombre</label><br>
+                    <input type="text" id="nombre" name="nombre" required><br>
+                    
+                    <label for="email">Correo Electrónico</label><br>
+                    <input type="email" id="email" name="email" required><br>
+
+                    <label for="password-1">Contraseña</label><br>
+                    <input type="password" id="password" name="password" required><br>
+
+                    <label for="password-2">Vuelve a escribir tu contraseña</label><br>
+                    <input type="password" id="password-2" name="password-2" required><br>
+
+                    <input class="ingresar" type="submit" value="Crea tu cuenta Sports Pro">
                 </form>
-                <p class="aviso-inferior">¿Olvidaste tu nombre de usuario y/o contraseña?<a href="#">¡Click aquí!</a></p>
-                <p class="aviso-inferior" >¿No tienes cuenta? <a href="./cuenta.html">Regístrate »</a></p>
+                <p class="aviso-inferior" >Al crear tu cuenta, aceptas las <a href="#">condiciones de uso</a> y el aviso de <a href="#">privacidad</a> de Sports Pro</p>
+                <p class="aviso-inferior" >¿Ya tienes una cuenta? <a href="./login.html">Iniciar sesión »</a></p>
             </section>
         </section>
     </header>

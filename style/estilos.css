@@ -79,14 +79,14 @@
 
 /*Login*/
 
-.login-container {
+.form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
 
-.login-box {
+.form-box {
     width: 350px;
     padding: 20px;
     background-color: #f6f8fa;
@@ -94,12 +94,7 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.login-box h2 {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.login-box input {
+.form-box input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -117,7 +112,7 @@
     background-color: #1a7f37;
 }
 
-.forgot-password {
+.aviso-inferior{
     text-align: center;
     font-size: 14px;
     color: #666;
