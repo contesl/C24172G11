@@ -1,3 +1,83 @@
+:root{
+    --bg-formBox: #f6f8fa;
+    --bg-formInput: #ccc;
+    --bg-ingresar: #1c8f3d;
+    --bg-colorIngr: #fff;
+    --bg-ingHover: #1a7f37;
+    --bg-avisoInf: #666;
+    --bg-color: #e2dcff;
+    --bg-colorHeader: #4930cd;
+    --bg-colortext1: #ff528a; /*Texto menú Index*/
+    --bg-hover: #a997ff; /*Fondo hover*/
+}
+
+/*Index*/
+
+.menu-header{
+    display:flex;
+    justify-content: space-around;
+}
+
+.menu-sections ul{
+    flex: 1;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+}
+
+.menu-botton{
+    padding: 5px 15px;
+    background-color: rgba(85, 85, 85, 0);
+    color: var(--bg-colortext1); 
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.menu-botton:hover{
+    opacity: 0.7;
+    background-color:  rgb(131, 154, 237, 0.4);
+}
+
+li{
+    float: left;
+} 
+
+li a {
+    display: block;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--bg-colortext1);
+}
+
+li a:hover {
+    background-color:var(--bg-hover);
+}
+
+/*-------------------------------------*/
+
+/*---------PARA RESPONSIVE----------------------------------*/
+@media only screen and (max-width:320px) {
+    /*celular*/
+    .imagen {
+            width: 320px;
+            height: 70%;
+            display: block;
+            margin: 0 auto;
+    
+        }
+}
+
+@media only screen and (max-width:768px) {
+    /*tablet*/
+}
+
+#fDescripcionEquipo {
+    text-align: center
+}
+
+/*------------------------------------------------*/
+
 .main-container {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -79,7 +159,7 @@
     display: "center"
 }
 
-/*Login*/
+/*Forms*/
 
 .form-container {
     display: flex;
@@ -91,31 +171,31 @@
 .form-box {
     width: 350px;
     padding: 20px;
-    background-color: #f6f8fa;
+    background-color: var(--bg-formBox);
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 10px 5px rgba(0,0,0,0.1);
 }
 
 .form-box input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--bg-formInput);
     border-radius: 3px;
     box-sizing: border-box;
 }
 
 .ingresar{
-    background-color: #1c8f3d;
-    color: #fff;
+    background-color: var(--bg-ingresar);
+    color: var(--bg-colorIngr);
     cursor: pointer;
 }
 .ingresar:hover{
-    background-color: #1a7f37;
+    background-color: var(--bg-ingHover);
 }
 
 .aviso-inferior{
     text-align: center;
     font-size: 14px;
-    color: #666;
+    color: var(--bg-avisoInf);
 }
