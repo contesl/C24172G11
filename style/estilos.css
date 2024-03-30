@@ -1,4 +1,4 @@
-:root{
+:root {
     --bg-formBox: #f6f8fa;
     --bg-formInput: #ccc;
     --bg-ingresar: #1c8f3d;
@@ -7,40 +7,42 @@
     --bg-avisoInf: #666;
     --bg-color: #e2dcff;
     --bg-colorHeader: #4930cd;
-    --bg-colortext1: #ff528a; /*Texto menú Index*/
-    --bg-hover: #a997ff; /*Fondo hover*/
+    --bg-colortext1: #ff528a;
+    /*Texto menú Index*/
+    --bg-hover: #a997ff;
+    /*Fondo hover*/
 }
 
 /*Index*/
 
-.menu-header{
-    display:flex;
+.menu-header {
+    display: flex;
     justify-content: space-around;
 }
 
-.menu-sections ul{
+.menu-sections ul {
     flex: 1;
     list-style-type: none;
     overflow: hidden;
     padding: 0;
 }
 
-.menu-botton{
+.menu-botton {
     padding: 5px 15px;
     background-color: rgba(85, 85, 85, 0);
-    color: var(--bg-colortext1); 
+    color: var(--bg-colortext1);
     cursor: pointer;
     margin: 0 5px;
 }
 
-.menu-botton:hover{
+.menu-botton:hover {
     opacity: 0.7;
-    background-color:  rgb(131, 154, 237, 0.4);
+    background-color: rgb(131, 154, 237, 0.4);
 }
 
-li{
+li {
     float: left;
-} 
+}
 
 li a {
     display: block;
@@ -51,21 +53,22 @@ li a {
 }
 
 li a:hover {
-    background-color:var(--bg-hover);
+    background-color: var(--bg-hover);
 }
 
 /*-------------------------------------*/
 
 /*---------PARA RESPONSIVE----------------------------------*/
 @media only screen and (max-width:320px) {
+
     /*celular*/
     .imagen {
-            width: 320px;
-            height: 70%;
-            display: block;
-            margin: 0 auto;
-    
-        }
+        width: 320px;
+        height: 70%;
+        display: block;
+        margin: 0 auto;
+
+    }
 }
 
 @media only screen and (max-width:768px) {
@@ -121,8 +124,8 @@ li a:hover {
 
 
 .imagen {
-    height: 430;
-    width: 572;
+    height: auto;
+    width: auto;
     border: 0;
     display: block;
     margin: 0 auto;
@@ -173,7 +176,7 @@ li a:hover {
     padding: 20px;
     background-color: var(--bg-formBox);
     border-radius: 5px;
-    box-shadow: 0 10px 10px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.1);
 }
 
 .form-box input {
@@ -185,16 +188,17 @@ li a:hover {
     box-sizing: border-box;
 }
 
-.ingresar{
+.ingresar {
     background-color: var(--bg-ingresar);
     color: var(--bg-colorIngr);
     cursor: pointer;
 }
-.ingresar:hover{
+
+.ingresar:hover {
     background-color: var(--bg-ingHover);
 }
 
-.aviso-inferior{
+.aviso-inferior {
     text-align: center;
     font-size: 14px;
     color: var(--bg-avisoInf);
