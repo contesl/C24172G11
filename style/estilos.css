@@ -56,13 +56,66 @@
            background-color: var(--bg-hover);
        }
 
+         /* Additional styles for responsiveness */
+         body {
+             margin: 0;
+             padding: 0;
+             font-family: Arial, sans-serif;
+         }
+    
+         header {
+             text-align: center;
+             padding: 20px;
+         }
+    
+         header figure {
+             margin-bottom: 10px;
+         }
+    
+         #headerGIF {
+             max-width: 100%;
+             height: auto;
+         }
+    
+         #headerSubtitulo {
+             font-size: 1.5rem;
+         }
+    
+         main {
+             padding: 20px;
+         }
+    
+         section {
+             text-align: justify;
+             margin-bottom: 20px;
+         }
+    
+         footer {
+             text-align: center;
+             padding: 10px;
+             background-color: #f0f0f0;
+         }
        /*---------PARA RESPONSIVE----------------------------------*/
 
        /* Mobile */
        @media only screen and (max-width: 320px) {
            .menu-header {
                flex-direction: column;
-           }
+    }
+            /* Small devices (320px and up) */
+            header {
+                padding: 10px;
+            }
+
+            #headerSubtitulo {
+                font-size: 1.2rem;
+}
+            #headerGIF {
+                width: 100%;
+            }
+            iframe {
+                width: 70%;
+            }
        }
 
        /* Tablet */
@@ -70,6 +123,29 @@
            .menu-header {
                flex-direction: column;
            }
+                header {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                #headerGIF {
+                    width: 80%;
+                }
+
+                #headerSubtitulo {
+                    font-size: 1.5em;
+                }
+
+                .main-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                iframe {
+                    width: 80%;
+                }
        }
 
        /* Small Desktop */
@@ -77,13 +153,80 @@
            .menu-header {
                flex-direction: row;
            }
-       }
+                                           /* Medium devices (768px and up) */
+                 header {
+                     display: flex;
+                     justify-content: space-between;
+                     align-items: center;
+                     padding: 0 20px;
+                 }
 
+            header figure {
+                margin-bottom: 20px;
+            }
+
+            #headerSubtitulo {
+                font-size: 1.8rem;
+            }
+                 #headerGIF {
+                     width: 40%;
+                 }
+            .main-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding: 0 20px;
+            }
+
+            iframe {
+                width: 40%;
+            }
+        }
        /* Large Desktop */
        @media only screen and (min-width: 1025px) {
            .menu-header {
                flex-direction: row;
            }
+                                           /* Large devices (1024px and up) */
+            main {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            article {
+                max-width: 800px;
+            }
+
+            section {
+                text-align: left;
+            }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+        }
+
+        #headerGIF {
+            width: 20%;
+        }
+
+        #headerSubtitulo {
+            font-size: 2.5em;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 0 50px;
+        }
+
+        iframe {
+            width: 30%;
+}
+            }
        }
 
        /*------------------------------------------------------------*/
