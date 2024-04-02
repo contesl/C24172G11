@@ -192,8 +192,16 @@ li a:hover {
     background-color: var(--bg-ingHover);
 }
 
-.aviso-inferior{
-    text-align: center;
-    font-size: 14px;
-    color: var(--bg-avisoInf);
+.policy-container {
+    display: inline-block;
+    position: relative;
+    margin: 20px auto; /* Margen exterior */
 }
+
+.policy-container input[type="checkbox"]{
+    position:absolute;
+    top: 18px; /* Distancia desde el borde superior */
+    right: 80px; /* Distancia desde el borde derecho */
+    background-color: lightblue;
+}
+
