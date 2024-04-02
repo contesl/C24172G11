@@ -63,15 +63,6 @@
            font-family: Arial, sans-serif;
        }
 
-       header {
-           text-align: center;
-           padding: 20px;
-       }
-
-       header figure {
-           margin-bottom: 10px;
-       }
-
        #headerSubtitulo {
            font-size: 1.5rem;
        }
@@ -155,9 +146,12 @@
        }
 
        #imagen-index {
-           margin: 0 auto;
-           width: 100%;
-           height: 100%;
+            height: auto;
+            width: auto;
+            border: 0;
+            display: block;
+            margin: 0 auto;
+            object-fit: cover;
        }
 
        #imagen-catalogo {
@@ -243,10 +237,6 @@
                flex-direction: column;
            }
 
-           header {
-               padding: 10px;
-           }
-
            #headerSubtitulo {
                font-size: 1.2rem;
            }
@@ -265,12 +255,6 @@
        @media only screen and (min-width: 768px) and (max-width: 1023px) {
            .menu-header {
                flex-direction: column;
-           }
-
-           header {
-               display: flex;
-               flex-direction: column;
-               align-items: center;
            }
 
            #headerGIF {
@@ -299,17 +283,6 @@
                flex-direction: row;
            }
 
-           /* Medium devices (768px and up) */
-           header {
-               display: flex;
-               justify-content: space-between;
-               align-items: center;
-               padding: 0 20px;
-           }
-
-           header figure {
-               margin-bottom: 20px;
-           }
 
            #headerSubtitulo {
                font-size: 1.8rem;
@@ -333,16 +306,10 @@
        }
 
        /* Large Desktop */
+
        @media only screen and (width > 1025px) {
            .menu-header {
                flex-direction: row;
-           }
-
-           /* Large devices (1024px and up) */
-           main {
-               display: flex;
-               justify-content: center;
-               align-items: flex-start;
            }
 
            article {
@@ -353,30 +320,19 @@
                text-align: left;
            }
 
-           header {
-               display: flex;
-               justify-content: column;
-               align-items: center;
-               padding: 0 20px;
-           }
-
            #headerGIF {
-               width: 100%;
+               width: 100%
            }
 
            #headerSubtitulo {
                font-size: 2.5em;
+               text-align: center
            }
 
-           .main-container {
-               display: flex;
-               justify-content: space-between;
-               align-items: flex-start;
-               padding: 0 50px;
-           }
+
 
            iframe {
-               width: 30%;
+               width: 40%;
            }
        }
 
