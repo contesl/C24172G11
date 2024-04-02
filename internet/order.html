@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo en Linea</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="../style/estilos.css">
+
+    <title>Completar la Compra</title>
+</head>
+
+<body>
+    <header>
+        <figure>
+            <img id="headerGIF" src="../images/header1.gif" alt="Header Image">
+        </figure>
+        <h1 id="headerSubtitulo">Tienda En Linea SportsPro</h1>
+    </header>
+    <main>
+        <section class="container">
+            <article>
+                <h2 id="headerSubtitulo">Complete su Compra</h2>
+                <table border class="tabla-centrada">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Item #</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="../internet/itemdetCompra.html">Pelotas de Tenis</a></td>
+                            <td>17</td>
+                            <td>5.950</td>
+                            <td>10</td>
+                            <td>59.500</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><strong>Total:</strong> $11.900</p>
+            </article>
+            <form>
+                <fieldset>
+                    <legend>Información de Envio</legend>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="phone">Telefono:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <label for="address">Direccion de Envio:</label>
+                    <textarea id="address" name="address" rows="4" required></textarea>
+                </fieldset>
+                <fieldset>
+                    <legend>Informacion de Pago</legend>
+                    <label for="payment">Metodo de Pago:</label>
+                    <select id="payment" name="payment" required>
+                        <option value="credit">Tarjeta de Credito</option>
+                        <option value="debit">Tarjeta de Debito</option>
+                        <option value="paypal">PayPal</option>
+                    </select>
+                </fieldset>
+                <button type="submit" class="btn">Confirmar la Compra</button>
+                <button type="submit" class="btn">Cancelar la Compra</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
