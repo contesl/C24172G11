@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
     <script type="text/javascript" src="../js/javascript.js"></script>
-   
-        <!----------------------------------------------->
-        <!--Aca insertamos la CSS externa-->
-        <link rel="stylesheet" href="/style/estilos.css">
-        <!----------------------------------------------->
+    <link rel="stylesheet" href="../style/estilos.css">
 
 </head>
 <body>
@@ -21,49 +17,56 @@
             <h1 id="headerSubtitulo">Formulario de Contacto</h1>
         </header>
 <main>
-   <article>
-    <form>
-    
-        <input type="text" name="nombre" value="Juan Perez">
-        <br>
-        <textarea name="comentario" rows="10" cols="40">Escribe tu comentario...</textarea>
-        <br>
-        <select name="estacion">
-    
-            <option value="1">Primavera</option>
-    
-            <option>Verano</option>
-    
-            <option selected>Otoño</option>
-    
-            <option>Invierno</option>
-    
-        </select>
-        <br>
-        <input type="radio" name="estacion" value="1">Primavera
-    
-        <input type="radio" name="estacion" value="2" checked>Verano
-    
-        <input type="radio" name="estacion" value="3">Otoño
-    
-        <input type="radio" name="estacion" value="4">Invierno
-    
-        <input type="checkbox" name="queso">Me gusta el queso.
-    <br>
-        <input type="submit" value="Enviar">
-    
-        <input type="reset" value="Borrar">
-    
-        <input type=hidden name="clave" value="1234">
-    
-        <input type=button value="Texto escrito en el botón">
-    
-    </form>
-    </article>
+   <section class="form-container">
+    <section class="form-box" >
+        <form id="form-contacto" onsubmit="return validarContacto('form-contacto')">
+            <label for="name">Nombre y Apellidos*: </label>    
+            <input id="name" type="text" name="name"><br>
+
+            <label for="company">Empresa: </label>
+            <input id="company" type="text" name="company"><br>
+
+            <label for="email">Email*: </label>
+            <input type="email" name="email" id="email"><br>
+
+            <label for="phone">Teléfono: </label>
+            <input id="phone" type="text" name="phone"><br>
+
+            <label for="country">País: </label>
+            <select name="pais" id="country">País:
+                <option value="0">-</option>
+                <option value="01">Argentina</option>
+                <option value="02">Bolivia</option>
+                <option value="03">Brasil</option>
+                <option value="04">Chile</option>
+                <option value="05">Colombia</option>
+                <option value="06">Ecuador</option>
+                <option value="07">Guyana</option>
+                <option value="08">Paraguay</option>
+                <option value="09">Perú</option>
+                <option value="10">Suriname</option>
+                <option value="11">Uruguay</option>
+                <option value="12">Venezuela</option>
+            </select> <br><br>
+            
+            <label for="comment">Mensaje: </label><br>
+            <textarea id="comment" name="comentario" rows="10" cols="40">Escribe aquí tu mensaje...</textarea>
+            <br>
+            
+            <section class="policy-container">
+                    <input class="politica-privacidad" type="checkbox" name="policy"><a href="#">He leído y acepto el aviso legal y la política de privacidad </a>
+            </section>
+
+            <br>
+            <input class="ingresar" type="submit" value="Enviar">    
+        </form>
+    </section>
+   </section>
 </main>
     <footer id="fDescripcionEquipo">
         <hr>
         <h3>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Kierszenowicz, Tomas / Conte, Sergio Luis <h3>
+            
     </footer>
 </body>
 </html>

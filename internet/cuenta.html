@@ -15,18 +15,18 @@
         <h1 id="headerSubtitulo">Crear cuenta</h1>
         <section class="form-container">
             <section class="form-box">
-                <form>
+                <form id="form-cuenta" onsubmit="return validarCuenta('form-cuenta')">
                     <label for="nombre">Tu nombre</label><br>
-                    <input type="text" id="nombre" name="nombre" required><br>
+                    <input type="text" name="username" id="nombre"><br>
                     
                     <label for="email">Correo Electrónico</label><br>
-                    <input type="email" id="email" name="email" required><br>
+                    <input type="text" id="email-cuenta" name="email"><br>
 
                     <label for="password-1">Contraseña</label><br>
-                    <input type="password" id="password-1" name="password-1" required><br>
+                    <input type="password" id="password-firts" name="password-1"><br>
 
                     <label for="password-2">Vuelve a escribir tu contraseña</label><br>
-                    <input type="password" id="password-2" name="password-2" required><br>
+                    <input type="password" id="password-new" name="password-2"><br>
 
                     <input class="ingresar" type="submit" value="Crea tu cuenta Sports Pro">
                 </form>
