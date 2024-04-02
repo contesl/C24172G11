@@ -169,6 +169,7 @@ function validarEmail(email) {
 function validarContacto(formulario){
     let username = document.getElementById(formulario).querySelector('input[name="name"]').value;
     let email = document.getElementById(formulario).querySelector('input[name="email"]').value
+    let checkbox = document.getElementById('checkbox');
     
     if(username.trim() ===''){
         alert('Debe ingresar su nombre y apellido');
@@ -179,6 +180,19 @@ function validarContacto(formulario){
         alert('Debe ingresar un email válido');
         return false;
     }
+
+    if (!checkbox.checked){
+        alert('Debe aceptar los téminos y condiciones');
+        return false;
+    }
     
+
     return true
+}
+
+function validarSubmit(){
+    let checkbox = document.getElementById('checkbox');
+    let submit = document.getElementById('submit');
+
+    submit.disabled = !checkbox.ariaChecked;
 }
