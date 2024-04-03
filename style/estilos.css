@@ -115,6 +115,17 @@ select {
     cursor: pointer;
 }
 
+                 .top {
+                     width: 810px;
+                     height: 75px;
+                     border: 1px solid black;
+                     margin: 5px;
+                     background-color: efefef;
+                     text-align: center;
+                     font: normal bold 16px/4.5 arial;
+                     color: red;
+                 }
+
 .main-container {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -150,6 +161,14 @@ select {
 .imagen {
     height: auto;
     width: auto;
+    border: 0;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.imagen-detalle {
+    width: 70%;
     border: 0;
     display: block;
     margin: 0 auto;
@@ -384,6 +403,45 @@ footer {
 .btn:hover {
     background-color: #0056b3;
 }
+
+   /*---pra cambiar tablas por divs que se comporten como tablas--*/
+   .rTable {
+       display: table;
+       width: 100%;
+   }
+
+   .rTableRow {
+       display: table-row;
+   }
+
+   .rTableHeading {
+       display: table-header-group;
+       background-color: #ddd;
+   }
+
+   .rTableCell,
+   .rTableHead {
+       display: table-cell;
+       padding: 3px 10px;
+       border: 1px solid #999999;
+   }
+
+   .rTableHeading {
+       display: table-header-group;
+       background-color: #ddd;
+       font-weight: bold;
+   }
+
+   .rTableFoot {
+       display: table-footer-group;
+       font-weight: bold;
+       background-color: #ddd;
+   }
+
+   .rTableBody {
+       display: table-row-group;
+   }
+   /*---pra cambiar tablas por divs que se comporten como tablas--*/
 
 /* Responsive */
 @media only screen and (max-width: 320px) {
