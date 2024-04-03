@@ -81,3 +81,4 @@ function displayProducts(products) {
     // Append the table to the product list div
     productListDiv.appendChild(table);
 }
+
