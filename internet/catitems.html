@@ -8,6 +8,8 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="../style/estilos.css">
+    <!-- External JavaScript -->
+    <script src="../js/app.js"></script>
 
 
 </head>
@@ -17,43 +19,14 @@
         <figure>
             <img id="headerGIF" src="../images/header1.gif" alt="Header Image">
         </figure>
-        <h1 id="headerSubtitulo">Tienda En Linea SportsPro</h1>
+        <h1>Tienda En Linea SportsPro</h1>
     </header>
     <main>
         <article>
-            <h2 id="headerSubtitulo">Categoria: Tenis</h2>
-            <table border class="tabla-centrada">
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Item #</th>
-                        <th>Precio</th>
-                        <th>Stock</th>
-                        <th>Seleccionar</th>
-                        <th>Cantidad a Comprar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="../internet/itemdet.html">Pelotas de Tenis</a></td>
-                        <td>17</td>
-                        <td>5.950</td>
-                        <td>10</td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="number" value="1" min="1"></td>
-                    </tr>
-                    <!-- Add more rows for additional items -->
-                </tbody>
-            </table>
-            <table class="tabla-centrada">
-                <br>
-                <tr>
-                    <td> <a href="../internet/order.html">Completar la Compra<br></td>
-                </tr>
-                <tr>
-                    <td> <A HREF="../internet/catalog.html"><img src="../images/catalog.gif"></A></td>
-                </tr>
-            </table>
+            <h2 id="categoryTitle" class="headerSubtitulo">Categoria: Tenis</h2>
+            <div id="productListContainer">
+                <!-- Product list will be dynamically generated here -->
+            </div>
         </article>
     </main>
 
@@ -62,8 +35,6 @@
         <h3>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Kierszenowicz, Tomas / Conte, Sergio Luis </h3>
     </footer>
 
-    <!-- External JavaScript -->
-    <script src="../js/javascript.js"></script>
 </body>
 
 </html>

@@ -115,10 +115,6 @@
 
            /*fin orden*/
 
-       #headerSubtitulo {
-           font-size: 1.5rem;
-       }
-
        main {
            display: flex;
            justify-content: center;
@@ -160,7 +156,7 @@
            display: table;
        }
 
-       #headerSubtitulo {
+       .headerSubtitulo {
            text-align: center;
        }
 
@@ -185,7 +181,6 @@
            display: block;
            margin: 0 auto;
        }
-
 
        .imagen {
            height: auto;
@@ -329,10 +324,6 @@
                padding: 10px;
            }
 
-           #headerSubtitulo {
-               font-size: 1.2rem;
-           }
-
            #headerGIF {
                width: 100%;
            }
@@ -356,10 +347,6 @@
 
            #headerGIF {
                width: 100%;
-           }
-
-           #headerSubtitulo {
-               font-size: 1.5em;
            }
 
            .main-container {
@@ -400,11 +387,6 @@
 
            header figure {
                margin-bottom: 20px;
-           }
-
-           #headerSubtitulo {
-               font-size: 1.8rem;
-               text-align: center;
            }
 
            #headerGIF {
@@ -462,9 +444,6 @@
                width: 100%;
            }
 
-           #headerSubtitulo {
-               font-size: 2.5em;
-           }
 
            iframe {
                width: 30%;
