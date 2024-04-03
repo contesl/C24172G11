@@ -80,5 +80,22 @@ function displayProducts(products) {
 
     // Append the table to the product list div
     productListDiv.appendChild(table);
+
+    // Add buttons for completing purchase and navigating to catalog page
+    const buttonRow = document.createElement('tr');
+    buttonRow.innerHTML = `
+        <td colspan="6">
+            <button class="btn" onclick="completePurchase()">Completar la Compra</button>
+            <button class="btn" onclick="goToCatalog()">Ver Catálogo</button>
+        </td>
+    `;
+    table.appendChild(buttonRow);
 }
 
+function completePurchase() {
+    window.location.href = "../internet/order.html";
+}
+
+function goToCatalog() {
+    window.location.href = "../internet/catalog.html";
+}
