@@ -8,8 +8,6 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="../style/estilos.css">
-    <!-- External JavaScript -->
-    <script src="../js/appOrder.js"></script>
 
     <title>Completar la Compra</title>
 </head>
@@ -35,14 +33,19 @@
                             <th>Total</th>
                         </tr>
                     </thead>
-                    <tbody id="itemDetails">
-                        <!-- Item details will be dynamically populated here -->
+                    <tbody>
+                        <tr>
+                            <td><a href="../internet/itemdetCompra.html">Pelotas de Tenis</a></td>
+                            <td>17</td>
+                            <td>5.950</td>
+                            <td>10</td>
+                            <td>59.500</td>
+                        </tr>
                     </tbody>
-                    <p><strong>Total:</strong> <span id="totalAmount">$0.00</span></p>
                 </table>
+                <p><strong>Total:</strong> $11.900</p>
             </article>
             <form>
-                <br>
                 <fieldset>
                     <legend>Información de Envio</legend>
                     <label for="name">Nombre:</label>
@@ -54,7 +57,6 @@
                     <label for="address">Direccion de Envio:</label>
                     <textarea id="address" name="address" rows="4" required></textarea>
                 </fieldset>
-                <br>
                 <fieldset>
                     <legend>Informacion de Pago</legend>
                     <label for="payment">Metodo de Pago:</label>

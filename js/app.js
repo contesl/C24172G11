@@ -109,15 +109,16 @@ function completePurchase() {
             // Get the item details from the row
             const itemNo = row.cells[0].textContent;
             const nombre = row.cells[1].textContent;
+            const precio = row.cells[2].textContent;
             const cantidad = parseInt(row.cells[5].querySelector('input[type="number"]').value);
 
             // Add item to selectedItems array
-            selectedItems.push({ itemNo, nombre, cantidad });
+            selectedItems.push({ itemNo, nombre, precio, cantidad });
         }
     });
 
     // Convert selectedItems array to query string
-    const queryString = selectedItems.map(item => `itemNo=${item.itemNo}&nombre=${item.nombre}&cantidad=${item.cantidad}`).join('&');
+    const queryString = selectedItems.map(item => `itemNo=${item.itemNo}&nombre=${item.nombre}&cantidad=${item.cantidad}&precio=${item.precio}`).join('&');
 
     // Redirect to order.html page with parameters
     window.location.href = `../internet/order.html?${queryString}`;
