@@ -17,7 +17,7 @@
 <body>
     <header>
         <figure>
-            <img id="headerGIF" src="../images/header1.gif" alt="Header Image">
+            <img class="headerGIF" src="../images/header1.gif" alt="Header Image">
         </figure>
         <h1>Tienda En Linea SportsPro</h1>
     </header>
@@ -25,21 +25,11 @@
         <section class="container">
             <article>
                 <h2 class="headerSubtitulo">Complete su Compra</h2>
-                <table border class="tabla-centrada">
-                    <thead>
-                        <tr>
-                            <th>Item</th>
-                            <th>Item #</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody id="itemDetails">
-                        <!-- Item details will be dynamically populated here -->
-                    </tbody>
-                    <p><strong>Total:</strong> <span id="totalAmount">$0.00</span></p>
-                </table>
+                <div id="productListContainer">
+                    <!-- Product list will be dynamically generated here -->
+                </div>
+                <br>
+                <p><strong>Total de la Orden:</strong> <span id="totalAmount">$0.00</span></p>
             </article>
             <form>
                 <br>
