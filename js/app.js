@@ -91,6 +91,9 @@ function displayProducts(products) {
     const buttonRow = document.createElement('div');
     buttonRow.setAttribute('class', 'rTableRow'); // Add class attribute
     buttonRow.innerHTML = `
+    <div class="rTableCellNB"></div>
+    <div class="rTableCellNB"></div>
+    <div class="rTableCellNB"></div>
     <div><button class="btn" onclick="completePurchase()">Completar la Compra</button></div>
     <div><button class="btn" onclick="goToCatalog()">Ver Catálogo</button></div>
     `;

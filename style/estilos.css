@@ -115,16 +115,16 @@ select {
     cursor: pointer;
 }
 
-                 .top {
-                     width: 810px;
-                     height: 75px;
-                     border: 1px solid black;
-                     margin: 5px;
-                     background-color: efefef;
-                     text-align: center;
-                     font: normal bold 16px/4.5 arial;
-                     color: red;
-                 }
+.top {
+    width: 810px;
+    height: 75px;
+    border: 1px solid black;
+    margin: 5px;
+    background-color: efefef;
+    text-align: center;
+    font: normal bold 16px/4.5 arial;
+    color: red;
+}
 
 .main-container {
     display: grid;
@@ -356,6 +356,7 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+
 .product-list {
     display: flex;
     flex-direction: column;
@@ -385,6 +386,7 @@ footer {
     display: flex;
     justify-content: center;
 }
+
 .button-container {
     margin-top: 20px;
     text-align: center;
@@ -404,44 +406,54 @@ footer {
     background-color: #0056b3;
 }
 
-   /*---pra cambiar tablas por divs que se comporten como tablas--*/
-   .rTable {
-       display: table;
-       width: 100%;
-   }
+/*---pra cambiar tablas por divs que se comporten como tablas--*/
+.center {
+    text-align: center
+}
 
-   .rTableRow {
-       display: table-row;
-   }
+.rTable {
+    display: table;
+    width: 100%;
+}
 
-   .rTableHeading {
-       display: table-header-group;
-       background-color: #ddd;
-   }
+.rTableRow {
+    display: table-row;
+}
 
-   .rTableCell,
-   .rTableHead {
-       display: table-cell;
-       padding: 3px 10px;
-       border: 1px solid #999999;
-   }
+.rTableHeading {
+    display: table-header-group;
+    background-color: #ddd;
+}
 
-   .rTableHeading {
-       display: table-header-group;
-       background-color: #ddd;
-       font-weight: bold;
-   }
+.rTableCell,
+.rTableHead {
+    display: table-cell;
+    padding: 3px 10px;
+    border: 1px solid #999999;
+}
 
-   .rTableFoot {
-       display: table-footer-group;
-       font-weight: bold;
-       background-color: #ddd;
-   }
+.rTableCellNB {
+    display: table-cell;
+    padding: 3px 10px;
+}
 
-   .rTableBody {
-       display: table-row-group;
-   }
-   /*---pra cambiar tablas por divs que se comporten como tablas--*/
+.rTableHeading {
+    display: table-header-group;
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+.rTableFoot {
+    display: table-footer-group;
+    font-weight: bold;
+    background-color: #ddd;
+}
+
+.rTableBody {
+    display: table-row-group;
+}
+
+/*---pra cambiar tablas por divs que se comporten como tablas--*/
 
 /* Responsive */
 @media only screen and (max-width: 320px) {
