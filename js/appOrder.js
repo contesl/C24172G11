@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Create a table body to hold the rows
     const productListDiv = document.getElementById('productListContainer');
+    if (itemNos.length === 0) {
+        productListDiv.innerHTML = '<p>Sin productos para procesar.</p>';
+        return;
+    }
     // Create a table to display the products
     const table = document.createElement('div');
     table.setAttribute('class', 'rTable'); // Add class attribute
