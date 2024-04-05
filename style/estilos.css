@@ -213,6 +213,10 @@ select {
     display: "center";
 }
 
+.error-message{
+    color: red;
+}
+
 .form-container {
     display: flex;
     justify-content: center;
@@ -226,6 +230,10 @@ select {
     background-color: var(--bg-formBox);
     border-radius: 5px;
     box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-box label{
+    text-align: left;
 }
 
 .form-box input {
