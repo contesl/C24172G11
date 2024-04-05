@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
-    <script type="text/javascript" src="../js/javascript.js"></script>
+    <script type="text/javascript" src="../js/appValidadores.js"></script>
     <link rel="stylesheet" href="../style/estilos.css">
 </head>
 <body>
@@ -15,18 +15,18 @@
         <h1 id="headerSubtitulo">Crear cuenta</h1>
         <section class="form-container">
             <section class="form-box">
-                <form id="form-cuenta" onsubmit="return validarCuenta('form-cuenta')">
-                    <label for="nombre">Tu nombre</label><br>
-                    <input type="text" name="username" id="nombre"><br>
+                <form id="form-cuenta" onsubmit="return validarCta('form-cuenta')">
+                    <label for="nombreCta">Tu nombre</label><br>
+                    <input type="text" name="nombreCta" id="nombreCta"><br>
                     
-                    <label for="email">Correo Electrónico</label><br>
-                    <input type="text" id="email-cuenta" name="email"><br>
+                    <label for="emailCta">Correo Electrónico</label><br>
+                    <input type="text" id="emailCta" name="emailCta"><br>
 
-                    <label for="password-1">Contraseña</label><br>
-                    <input type="password" id="password-firts" name="password-1"><br>
+                    <label for="passwordFirts">Contraseña</label><br>
+                    <input type="password" id="passwordFirts" name="passwordFirts" autocomplete="cc-csc"><br>
 
-                    <label for="password-2">Vuelve a escribir tu contraseña</label><br>
-                    <input type="password" id="password-new" name="password-2"><br>
+                    <label for="password-new">Vuelve a escribir tu contraseña</label><br>
+                    <input type="password" id="password-new" name="password-new" autocomplete="cc-csc"><br>
 
                     <input class="ingresar" type="submit" value="Crea tu cuenta Sports Pro">
                 </form>

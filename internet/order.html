@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../style/estilos.css">
     <!-- External JavaScript -->
     <script src="../js/appOrder.js"></script>
+    <script src="../js/appValidadores.js"></script>
 
     <title>Completar la Compra</title>
 </head>
@@ -31,18 +32,18 @@
                 <br>
                 <p><strong>Total de la Orden:</strong> <span id="totalAmount">$0.00</span></p>
             </article>
-            <form>
+            <form id="form-order" onsubmit="return validarCuenta('form-order')" >
                 <br>
                 <fieldset>
                     <legend>Información de Envio</legend>
                     <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email">
                     <label for="phone">Telefono:</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <input type="tel" id="phone" name="phone">
                     <label for="address">Direccion de Envio:</label>
-                    <textarea id="address" name="address" rows="4" required></textarea>
+                    <textarea id="address" name="address" rows="4"></textarea>
                 </fieldset>
                 <br>
                 <fieldset>

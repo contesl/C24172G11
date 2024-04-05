@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in</title>
-    <script type="text/javascript" src="../js/javascript.js"></script>
+    <script type="text/javascript" src="../js/appValidadores.js"></script>
     <link rel="stylesheet" href="../style/estilos.css">
 </head>
 <body>
@@ -16,9 +16,11 @@
         <h1 id="headerSubtitulo">Inciar sesión</h1>
         <section class="form-container">
             <section class="form-box">
-                <form id="form-login" onsubmit="return validarLogin('form-login')">
-                    <input type="text" name="username" placeholder="Nombre de usuario" autocomplete="given-name"><br>
-                    <input type="password" name="password" placeholder="Contraseña"><br>
+                <form id="form-login" onsubmit="validarLogin(event)">
+                    <input type="text" id="username" name="username" placeholder="Nombre de usuario" autocomplete="given-name">
+                    <span id="error-name" class="error-message" ></span>
+                    <input id="password" type="password" name="password" placeholder="Contraseña">
+                    <span id="error-password" class="error-message"></span>
                     <input class="ingresar" type="submit" value="Ingresar">
                 </form>
                 <p class="aviso-inferior">¿Olvidaste tu nombre de usuario y/o contraseña?<a href="#">¡Click aquí!</a></p>
