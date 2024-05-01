@@ -99,7 +99,7 @@ formContact.addEventListener("submit", function(e){
     if ((!usernameValid) || (!emailValid) || (!checkboxField.checked)){
 
         submitBotton.nextElementSibling.classList.add("error");
-        submitBotton.nextElementSibling.innerText = "Es necesario que complete todos los campos.";
+        submitBotton.nextElementSibling.innerText = "Es necesario que complete los campos obligatorios y acepte las políticas de privacidad.";
         e.preventDefault();
     }
     else {

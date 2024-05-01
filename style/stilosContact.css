@@ -5,6 +5,7 @@
 }
 
 .error{
+    text-align: center;
     color: red;
     display: block;
     padding: 0 0 10px;
