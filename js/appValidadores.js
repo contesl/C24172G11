@@ -1,3 +1,12 @@
+function validarEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+function validarTelefono(phone) {
+    var re = /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{4})$/;
+    return re.test(phone);
+}
+
 //Login//
 function validarLogin(event) {
     let username = document.getElementById('username').value.trim();
@@ -48,10 +57,7 @@ function validarCta(formulario) {
     }
     return true;
 }
-function validarEmail(email) {
-    var re = /\S+@\S+\.\S+/;
-    return re.test(email);
-}
+
 //Contacto//
 function validarContacto(formulario){
     let username = document.getElementById(formulario).querySelector('input[name="name"]').value;
@@ -75,9 +81,39 @@ function validarContacto(formulario){
     return true
 }
 
+function validarCompletarCompra(formulario) {
+    let username = document.getElementById(formulario).querySelector('input[name="name"]').value;
+    let email = document.getElementById(formulario).querySelector('input[name="email"]').value
+    let phone = document.getElementById(formulario).querySelector('input[name="phone"]').value;
+    let address = document.getElementById(formulario).querySelector('input[name="address"]').value
+     
+    alert(username, email, phone, address)
+
+
+    if (username.trim() === '') {
+        alert('Debe ingresar su nombre y apellido');
+        return false;
+    }
+    if (!validarEmail(email)) {
+        alert('Debe ingresar un email válido');
+        return false;
+    }
+
+    if (!validarTelefono(phone)) {
+        alert('Debe ingresar un telefono válido');
+        return false;
+    }
+
+    if (address.trim() === '') {
+        alert('Debe ingresar direccion de entrega');
+        return false;
+    }
+
+    return true
+}
+
 function validarSubmit(){
     let checkbox = document.getElementById('checkbox');
     let submit = document.getElementById('submit');
-
     submit.disabled = !checkbox.ariaChecked;
 }

@@ -10,17 +10,29 @@
 
 <body>
     <header>
-        <figure>
-            <img class="headerGIF" src="../images/header1.gif" alt="Header Image">
+        <section class="menu-header">
+            <nav class="menu-sections">
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/internet/whatis.html">Qué es SportsPro</a></li>
+                    <li><a href="/internet/whois.html">Quiénes somos</a></li>
+                    <li><a href="/internet/catalog.html">Comprar en Linea</a></li>
+                    <li><a href="/internet/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </section>
+        <figure class="contenedorImagen centered">
+            <img id="imagen-index" src="../images/header1.gif">
         </figure>
-        <h1>Tienda En Linea SportsPro</h1>
     </header>
-    <main>
+
+    <main class="container">
         <section>
-            <h2 class="headerSubtitulo">Seleccione un deporte que le interese y a comprar!</h2>
+            <h1 class="headerSubtitulo">Seleccione el deporte que le interese y a comprar!</h1>
+            <br>
             <div class="catalog-grid">
-                <a href="../internet/catitems.html?categoria=Golf"><img class="catalog-image" src="../images/golf.gif"
-                        alt="Golf"></a>
+                <a href="../internet/catitems.html?categoria=Golf"><img class="catalog-image" 
+                    src="../images/golf.gif" alt="Golf"></a>
                 <a href="../internet/catitems.html?categoria=Skiing"><img class="catalog-image"
                         src="../images/skiing.gif" alt="Skiing"></a>
                 <a href="../internet/catitems.html?categoria=Tennis"><img class="catalog-image"
@@ -34,9 +46,10 @@
             </div>
         </section>
     </main>
+
     <footer id="fDescripcionEquipo">
         <hr>
-        <h3>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Kierszenowicz, Tomas / Conte, Sergio Luis </h3>
+        <p>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Conte, Sergio Luis </p>
     </footer>
 </body>
 

@@ -4,25 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo en Linea</title>
+    <title>Compra en Linea</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="../style/estilos.css">
     <!-- External JavaScript -->
     <script src="../js/app.js"></script>
-
-
 </head>
 
 <body>
     <header>
-        <figure>
-            <img id="headerGIF" src="../images/header1.gif" alt="Header Image">
+        <section class="menu-header">
+            <nav class="menu-sections">
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/internet/whatis.html">Qué es SportsPro</a></li>
+                    <li><a href="/internet/whois.html">Quiénes somos</a></li>
+                    <li><a href="/internet/catalog.html">Comprar en Linea</a></li>
+                    <li><a href="/internet/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </section>
+        <figure class="contenedorImagen centered">
+            <img id="imagen-index" src="../images/header1.gif">
         </figure>
-        <h1>Tienda En Linea SportsPro</h1>
     </header>
+
     <main>
         <article>
+        <!--NO CAMBIAR LO DE ABAJO PORQUE NO FUNCIONA app.js Y NO ARMA 
+            LA TABLA DINAMICA
+        -->
             <h2 id="categoryTitle" class="headerSubtitulo">Categoria: Tenis</h2>
             <div id="productListContainer">
                 <!-- Product list will be dynamically generated here -->
@@ -31,10 +43,10 @@
     </main>
 
     <footer id="fDescripcionEquipo">
+        <br>
         <hr>
-        <h3>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Kierszenowicz, Tomas / Conte, Sergio Luis </h3>
+        <p>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Conte, Sergio Luis </p>
     </footer>
 
 </body>
-
 </html>
