@@ -1,119 +1,108 @@
+const usernameField = document.querySelector("[name=username]");
+const companyField = document.querySelector("[name=company]");
+const emailField = document.querySelector("[name=email]");
+const phoneField = document.querySelector("[name=phone]");
+const comentField = document.querySelector("[name=comentario]");
+const checkboxField = document.querySelector("[name=policy]");
+const submitBotton = document.querySelector("[type=submit]");
+const formContact = document.querySelector("#form-contacto")
+let usernameValid = false;
+let emailValid = false;
+
+
 function validarEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
 }
-function validarTelefono(phone) {
-    var re = /^\(?(\d{3})\)?[-]?(\d{3})[-]?(\d{4})$/;
-    return re.test(phone);
+
+function validarCampo(field){
+
+    submitBotton.nextElementSibling.classList.add('error');
+    submitBotton.nextElementSibling.innerText = '';
+    field.classList.remove('invalid');
+    field.classList.add('valid');
+    field.nextElementSibling.classList.add('error');
+    field.nextElementSibling.innerText = '';
+
+    field.addEventListener("blur", function(e){
+
+        const fieldValue = e.target.value;
+
+        if (fieldValue.length === 0){
+            field.classList.remove("valid");
+            field.classList.add("invalid");
+            field.nextElementSibling.classList.add("error");
+            field.nextElementSibling.innerText = "Debe rellenar este campo";
+            if (field.name === "username"){
+                usernameValid = false;
+            } else if (field.name === "email") {
+                emailValid = false;
+            }
+        } else {
+            field.classList.remove("invalid");
+            field.classList.add("valid");
+            field.nextElementSibling.classList.add("error");
+            field.nextElementSibling.innerText = "";
+            if (field.name === "username"){
+                usernameValid = true;
+            } else if (field.name === "email") {
+                emailValid = true;
+            }
+
+        }
+
+        if (field.name == "email"){
+            if (!validarEmail(field.value)){
+                field.classList.remove("valid");
+                field.classList.add("invalid");
+                field.nextElementSibling.classList.add("error");
+                field.nextElementSibling.innerText = "El email ingresado no es válido";
+            }
+        }
+    })
 }
 
-//Login//
-function validarLogin(event) {
-    let username = document.getElementById('username').value.trim();
-    let password = document.getElementById('password').value.trim();
-    let errorUsername = document.getElementById('error-name');
-    let errorPassword = document.getElementById('error-password');
-    let valid = true;
+function sombraCampo(field){
+    
+    field.classList.remove('invalid');
+    field.classList.add('valid');
 
-    if(username === '') {
-        errorUsername.textContent = 'Por favor, ingrese su nombre';
-        valid = false;
-    } else {
-        errorUsername.textContent = '';
-    }
-
-    if(password ===''){
-        errorPassword.textContent = 'Por favor, ingrese una contraseña';
-        valid = false;
-    } else {
-        errorPassword.textContent = '';
-    }
-    if (!valid) {
-        event.preventDefault();
-    }
+    field.addEventListener("blur", function(e){
+        
+        field.classList.remove('valid');
+        field.classList.add('');
+    })
 }
 
-//Creación de cuenta//
-function validarCta(formulario) {
-    let username = document.getElementById(formulario).querySelector('input[name="nombreCta"]').value;
-    let email = document.getElementById(formulario).querySelector('input[name="emailCta"]').value
-    let password_1 = document.getElementById(formulario).querySelector('input[name="passwordFirts"]').value;
-    let password_2 = document.getElementById(formulario).querySelector('input[name="password-new"]').value;
-    if(username.trim() === '') {
-        alert('Debe ingresar un nombre de usuario');
-        return false;
-    }    
-    if(!validarEmail(email)){
-        alert('Ingrese un email válido, por favor.');
-        return false;
+usernameField.addEventListener("click", function(e){
+    validarCampo(usernameField);
+})
+
+emailField.addEventListener("click", function(e){
+    validarCampo(emailField)
+})
+
+companyField.addEventListener("click", function(e){
+    sombraCampo(companyField)
+})
+
+phoneField.addEventListener("click", function(e){
+    sombraCampo(phoneField)
+})
+
+comentField.addEventListener("click", function(e){
+    sombraCampo(comentField)
+})
+
+formContact.addEventListener("submit", function(e){
+    
+    if ((!usernameValid) || (!emailValid) || (!checkboxField.checked)){
+
+        submitBotton.nextElementSibling.classList.add("error");
+        submitBotton.nextElementSibling.innerText = "Es necesario que complete todos los campos.";
+        e.preventDefault();
     }
-    if (password_1 === ''){
-        alert('Debe ingresar una contraseña');
-        return false;
+    else {
+        alert('¡Datos enviados exitosamente!')
     }
-    if (password_2 === ''){
-        alert('Debe confirmar su contraseña');
-        return false;
-    }
-    return true;
-}
-
-//Contacto//
-function validarContacto(formulario){
-    let username = document.getElementById(formulario).querySelector('input[name="name"]').value;
-    let email = document.getElementById(formulario).querySelector('input[name="email"]').value
-    let checkbox = document.getElementById('checkbox');
-
-    if(username.trim() ===''){
-        alert('Debe ingresar su nombre y apellido');
-        return false;
-    }
-    if (!validarEmail(email)){
-        alert('Debe ingresar un email válido');
-        return false;
-    }
-
-    if (!checkbox.checked){
-        alert('Debe aceptar los téminos y condiciones');
-        return false;
-    }
-
-    return true
-}
-
-function validarCompletarCompra(formulario) {
-    let username = document.getElementById(formulario).querySelector('input[name="name"]').value;
-    let email = document.getElementById(formulario).querySelector('input[name="email"]').value
-    let phone = document.getElementById(formulario).querySelector('input[name="phone"]').value;
-    let address = document.getElementById(formulario).querySelector('input[name="address"]').value
-     
-    alert(username, email, phone, address)
-
-
-    if (username.trim() === '') {
-        alert('Debe ingresar su nombre y apellido');
-        return false;
-    }
-    if (!validarEmail(email)) {
-        alert('Debe ingresar un email válido');
-        return false;
-    }
-
-    if (!validarTelefono(phone)) {
-        alert('Debe ingresar un telefono válido');
-        return false;
-    }
-
-    if (address.trim() === '') {
-        alert('Debe ingresar direccion de entrega');
-        return false;
-    }
-
-    return true
-}
-
-function validarSubmit(){
-    let checkbox = document.getElementById('checkbox');
-    let submit = document.getElementById('submit');
-    submit.disabled = !checkbox.ariaChecked;
-}
+})

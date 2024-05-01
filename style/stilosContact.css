@@ -1,0 +1,23 @@
+.noError{
+    color: green;
+    display: block;
+    padding: 0 0 10px;
+}
+
+.error{
+    color: red;
+    display: block;
+    padding: 0 0 10px;
+}
+
+.invalid {
+    border: solid 1px red;
+    box-shadow: 0 0 10px red;
+    transition: 0.3s;
+}
+
+.valid {
+    border: solid 1px green;
+    box-shadow: 0 0 10px green;
+    transition: 0.3s;
+}

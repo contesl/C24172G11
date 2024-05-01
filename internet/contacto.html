@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <script type="text/javascript" src="../js/appValidadores.js"></script>
     <link rel="stylesheet" href="../style/estilos.css">
+    <link rel="stylesheet" href="../style/stilosContact.css">
 
 </head>
 <body>
@@ -28,15 +28,23 @@
 <main>
    <section class="form-container">
     <section class="form-box" >
-        <form id="form-contacto" onsubmit="return validarContacto('form-contacto')">
-            <label for="name">Nombre y Apellidos*: </label>    
-            <input id="name" type="text" name="name"><br>
+        <form id="form-contacto">
+            <label for="name">
+                Nombre y Apellidos*: 
+                <input id="name" type="text" name="username">
+                <span></span>
+            </label>    
+            
 
             <label for="company">Empresa: </label>
             <input id="company" type="text" name="company"><br>
 
-            <label for="email">Email*: </label>
-            <input type="email" name="email" id="email"><br>
+            <label for="email">
+                Email*: 
+                <input type="email" name="email" id="email">
+                <span></span>
+            </label>
+            
 
             <label for="phone">Teléfono: </label>
             <input id="phone" type="text" name="phone"><br>
@@ -67,10 +75,12 @@
             </section>
 
             <br>
-            <input id="submit" class="ingresar" type="submit" value="Enviar">    
+            <input id="submit" class="ingresar" type="submit" value="Enviar">
+            <span></span>    
         </form>
     </section>
    </section>
+   <script type="text/javascript" src="../js/appValidadores.js"></script>
 </main>
     <footer id="fDescripcionEquipo">
         <br>
