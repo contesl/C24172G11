@@ -94,9 +94,8 @@ function displayProducts(products) {
     <div class="rTableCellNB"></div>
     <div class="rTableCellNB"></div>
     <div class="rTableCellNB"></div>
-    <div><button class="btn" onclick="completePurchase()">Completar la Compra</button></div>
-    <div><button class="btn" onclick="goToCatalog()">Ver Catálogo</button></div>
-    `;
+    <div class="rTableCellNB"><button class="btn" onclick="completePurchase()">Completar la Compra</button></div>
+     `;
     table.appendChild(buttonRow);
  
  }

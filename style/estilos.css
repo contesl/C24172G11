@@ -362,17 +362,18 @@ select {
 }
 
 .btn {
+    background-color: var(--bg-ingresar);
+    color: var(--bg-colorIngr);
+    cursor: pointer;
     padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     margin-right: 10px;
+    text-align:center
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: var(--bg-ingHover);
 }
 
 /*---pra cambiar tablas por divs que se comporten como tablas--*/
@@ -416,6 +417,7 @@ select {
 .rTableCellNB {
     display: table-cell;
     padding: 3px 10px;
+    text-align:center
 }
 
 .rTableHeading {
