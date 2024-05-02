@@ -12,7 +12,9 @@
     <!-- External JavaScript -->
     <!--armado dinamico de acuerdo a parametro y validacion de entradas-->
     <script src="../js/appOrder.js"></script>  
-     <title>Completar la Compra</title>
+    <script src="../js/appValidadores.js"></script>
+
+    <title>Completar la Compra</title>
 </head>
 
 <body>
@@ -35,7 +37,6 @@
     </header>
 
     <main>
-        
     <section class="container">
             <article>
                 <!--NO CAMBIAR LO DE ABAJO PORQUE NO FUNCIONA app.js Y NO ARMA 
@@ -43,11 +44,11 @@
                         -->
                 <h2 class="headerSubtitulo">Complete su Compra</h2>
                 <div id="productListContainer">
+                    <!-- Product list will be dynamically generated here -->
                 </div>
                 <br>
                 <p><strong>Total de la Orden:</strong> <span id="totalAmount">$0.00</span></p>
             </article>
-        
         <section class="form-box">
             <form id="form-order" onsubmit="return validarCompletarCompra('form-order')" >
                 <br>
@@ -76,13 +77,7 @@
             </form>
         </section>
         </section>
-        <script type="text/javascript" src="../js/appValidadores.js"></script>
     </main>
 </body>
-    <footer id="fDescripcionEquipo">
-        <br>
-        <hr>
-        <p>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Conte, Sergio Luis </p>
-    
-    </footer>
+
 </html>
