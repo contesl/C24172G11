@@ -7,7 +7,9 @@ const xhr = new XMLHttpRequest();
 
 // Define the request URL
 //const url = "../db/JSON/Item.json";
-const url = "https://venerable-cactus-32abfb.netlify.app/item.json";
+const targetUrl = 'https://venerable-cactus-32abfb.netlify.app/item.json';
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const url = (proxyUrl + targetUrl)
 
 // Open a new GET request
 xhr.open('GET', url, true);
