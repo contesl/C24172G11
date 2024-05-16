@@ -6,7 +6,8 @@ const categoria = urlParams.get('categoria');
 const xhr = new XMLHttpRequest();
 
 // Define the request URL
-const url = "../db/JSON/Item.json";
+//const url = "../db/JSON/Item.json";
+const url = "https://venerable-cactus-32abfb.netlify.app/item.json";
 
 // Open a new GET request
 xhr.open('GET', url, true);
