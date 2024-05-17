@@ -2,20 +2,25 @@
 const urlParams = new URLSearchParams(window.location.search);
 const categoria = urlParams.get('categoria');
 
+// Create a new XMLHttpRequest object
+const xhr = new XMLHttpRequest();
+
 // Define the request URL
+//const url = "../db/JSON/Item.json";
 const targetUrl = 'https://venerable-cactus-32abfb.netlify.app/item.json';
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-const url = (proxyUrl + targetUrl);
+const url = (proxyUrl + targetUrl)
 
-// Fetch data using the Fetch API
-fetch(url)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(data => {
+// Open a new GET request
+xhr.open('GET', url, true);
+
+// Set up event listener for when the request is complete
+xhr.onload = function () {
+    // Check if the request was successful (status code 200)
+    if (xhr.status === 200) {
+        // Parse JSON response
+        const data = JSON.parse(xhr.responseText);
+
         // Filter data based on the category
         const filteredData = data.filter(item => item.Categoria === categoria);
 
@@ -26,10 +31,18 @@ fetch(url)
 
         // Display the filtered data on the page
         displayProducts(filteredData);
-    })
-    .catch(error => {
-        console.error('Error fetching data:', error);
-    });
+    } else {
+        console.error('Error fetching data. Status:', xhr.status);
+    }
+};
+
+// Set up event listener for error handling
+xhr.onerror = function () {
+    console.error('Error fetching data.');
+};
+
+// Send the request
+xhr.send();
 
 function displayProducts(products) {
     const productListDiv = document.getElementById('productListContainer');
@@ -45,14 +58,14 @@ function displayProducts(products) {
     table.setAttribute('border', '1'); // Add border attribute
     table.innerHTML = `
         <div class="rTableRow">
-            <div class="rTableHead"><strong>Imagen</strong></div>
-            <div class="rTableHead"><strong>Item #</strong></div>
-            <div class="rTableHead"><strong>Nombre</strong></div>
-            <div class="rTableHead"><strong>Descripcion Catalogo</strong></div>
-            <div class="rTableHead"><strong>Precio</strong></div>
-            <div class="rTableHead"><strong>Stock</strong></div>
-            <div class="rTableHead"><strong>Seleccionar</strong></div>
-            <div class="rTableHead"><strong>Cantidad a Comprar</strong></div>
+        <div class="rTableHead"><strong>Imagen</strong></div>
+        <div class="rTableHead"><strong>Item #</strong></div>
+        <div class="rTableHead"><strong>Nombre</strong></div>
+        <div class="rTableHead"><strong>Descripcion Catalogo</strong></div>
+        <div class="rTableHead"><strong>Precio</strong></div>
+        <div class="rTableHead"><strong>Stock</strong></div>
+        <div class="rTableHead"><strong>Seleccionar</strong></div>
+        <div class="rTableHead"><strong>Cantidad a Comprar</strong></div>
         </div>
     `;
 
@@ -77,16 +90,18 @@ function displayProducts(products) {
     productListDiv.appendChild(table);
 
     // Add buttons for completing purchase and navigating to catalog page
+
     const buttonRow = document.createElement('div');
     buttonRow.setAttribute('class', 'rTableRow'); // Add class attribute
     buttonRow.innerHTML = `
-        <div class="rTableCellNB"></div>
-        <div class="rTableCellNB"></div>
-        <div class="rTableCellNB"></div>
-        <div class="rTableCellNB"><button class="btn" onclick="completePurchase()">Completar la Compra</button></div>
-    `;
+    <div class="rTableCellNB"></div>
+    <div class="rTableCellNB"></div>
+    <div class="rTableCellNB"></div>
+    <div class="rTableCellNB"><button class="btn" onclick="completePurchase()">Completar la Compra</button></div>
+     `;
     table.appendChild(buttonRow);
-}
+ 
+ }
 
 function completePurchase() {
     // Get all checkboxes in the table
@@ -109,6 +124,7 @@ function completePurchase() {
             const cantidad = parseInt(row.querySelector('.rTableCell:nth-child(8) input[type="number"]').value);
 
             // Add item to selectedItems array
+            //selectedItems.push({ itemNo, nombre, precio, cantidad });
             selectedItems.push({ itemNo, nombre, precio, cantidad });
         }
     });
@@ -116,9 +132,11 @@ function completePurchase() {
     // Convert selectedItems array to query string
     const queryString = selectedItems.map(item => `itemNo=${item.itemNo}&nombre=${item.nombre}&cantidad=${item.cantidad}&precio=${item.precio}`).join('&');
 
+
     // Redirect to order.html page with parameters
     window.location.href = `../internet/order.html?${queryString}`;
 }
+
 
 function goToCatalog() {
     window.location.href = "../internet/catalog.html";
