@@ -6,7 +6,7 @@ const categoria = urlParams.get('categoria');
 //const targetUrl = 'https://venerable-cactus-32abfb.netlify.app/item.json';
 //const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 //const url = (proxyUrl + targetUrl);
-const proxyUrl = 'https://https://contesl.github.io/C24172G11/db/JSON/item.json';
+const url = 'https://https://contesl.github.io/C24172G11/db/JSON/item.json';
 
 // Fetch data using the Fetch API
 fetch(url)
