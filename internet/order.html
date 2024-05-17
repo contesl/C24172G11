@@ -12,7 +12,6 @@
     <!-- External JavaScript -->
     <!--armado dinamico de acuerdo a parametro y validacion de entradas-->
     <script src="../js/appOrder.js"></script>  
-    <script src="../js/appValidadores.js"></script>
 
     <title>Completar la Compra</title>
 </head>
@@ -50,7 +49,7 @@
                 <p><strong>Total de la Orden:</strong> <span id="totalAmount">$0.00</span></p>
             </article>
         <section class="form-box">
-            <form id="form-order" onsubmit="return validarCompletarCompra('form-order')" >
+            <form id="form-order">
                 <br>
                 <fieldset>
                     <legend>Información de Envio</legend>
@@ -73,10 +72,11 @@
                         <option value="paypal">PayPal</option>
                     </select>
                 </fieldset>
-                <input id="submit" class="ingresar" type="submit" value="Enviar">
+                <input id="submit" class="ingresar" type="submit" value="Enviar" onclick="alertar('Compra Exitosa. Gracias!');">
             </form>
         </section>
         </section>
+        <script type="text/javascript" src="../js/appValidadores.js"></script>
     </main>
 </body>
 

@@ -13,7 +13,7 @@ const url = 'https://contesl.github.io/C24172G11/db/JSON/Item.json';
 fetch(url)
     .then(response => {
         if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
+            throw new Error('Error en la respuesta ' + response.statusText);
         }
         return response.json();
     })
@@ -30,14 +30,14 @@ fetch(url)
         displayProducts(filteredData);
     })
     .catch(error => {
-        console.error('Error fetching data:', error);
+        console.error('Error al intentar recuperar datos:', error);
     });
 
 function displayProducts(products) {
     const productListDiv = document.getElementById('productListContainer');
 
     if (products.length === 0) {
-        productListDiv.innerHTML = '<p>No products found for this category.</p>';
+        productListDiv.innerHTML = '<p>No se encuentran productos para la categoria.</p>';
         return;
     }
 

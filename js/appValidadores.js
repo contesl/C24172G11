@@ -9,6 +9,10 @@ const formContact = document.querySelector("#form-contacto")
 let usernameValid = false;
 let emailValid = false;
 
+function alertar(texto) {
+    alert(texto);
+    window.open("../internet/catalog.html");
+    }
 
 function validarEmail(email) {
     var re = /\S+@\S+\.\S+/;
