@@ -4,7 +4,11 @@ const urlParams = new URLSearchParams(window.location.search);
 const categoria = urlParams.get('categoria');
 
 // Define the request URL
+//const targetUrl = 'https://venerable-cactus-32abfb.netlify.app/item.json';
+//const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+//const url = (proxyUrl + targetUrl);
 const url = 'https://contesl.github.io/C24172G11/db/JSON/Item.json';
+
 
 // tenemos un JSON con el detalle de los productos
 // hacemos fetch usando la API como el profe nos enseño
@@ -22,7 +26,7 @@ fetch(url)
         // de acuerdo a la categoria muestra el titulo en catitems.html
         const categoryTitle = document.getElementById('categoryTitle');
         categoryTitle.textContent = `Categoria: ${categoria}`;
-        categoryTitle.setAttribute('class', 'headerSubtitulo');
+        categoryTitle.setAttribute('class', 'headerSubtitulo'); 
 
         // llama a la funcion para desplega los productos
         // pasandole la data ya filtrada
@@ -59,9 +63,6 @@ function displayProducts(products) {
 
     // lee la data con articulos filtrados y va generando las filas
     products.forEach(product => {
-        const precioFormateado = '$' + parseFloat(product['Precio']).toFixed(2);
-        const disponibleFormateado = parseFloat(product['Disponible']).toFixed(2);
-
         const row = document.createElement('div');
         row.setAttribute('class', 'rTableRow'); // Add class attribute
         row.innerHTML = `
@@ -69,8 +70,8 @@ function displayProducts(products) {
             <div class="rTableCell">${product['Item No']}</div>
             <div class="rTableCell">${product['Nombre']}</div>
             <div class="rTableCell">${product['Descripcion Catalogo']}</div>
-            <div class="rTableCell">${precioFormateado}</div>
-            <div class="rTableCell">${disponibleFormateado}</div>
+            <div class="rTableCell">${product['Precio']}</div>
+            <div class="rTableCell">${product['Disponible']}</div>
             <div class="rTableCell"><input type="checkbox"></div>
             <div class="rTableCell"><input type="number" value="1" min="1"></div>
         `;
@@ -82,7 +83,7 @@ function displayProducts(products) {
 
     // agrega los botones para ir a la finalizacion de la compra
     const buttonRow = document.createElement('div');
-    buttonRow.setAttribute('class', 'rTableRow');
+    buttonRow.setAttribute('class', 'rTableRow'); 
     buttonRow.innerHTML = `
         <div class="rTableCellNB"></div>
         <div class="rTableCellNB"></div>
@@ -101,7 +102,7 @@ function completePurchase() {
 
     // Loop entre todos los checkbox para detectar los seleccionados
     checkboxes.forEach((checkbox, index) => {
-
+ 
         if (checkbox.checked) {
 
             const row = checkbox.closest('.rTableRow');
@@ -111,17 +112,14 @@ function completePurchase() {
             const nombre = row.querySelector('.rTableCell:nth-child(3)').textContent;
             const precio = row.querySelector('.rTableCell:nth-child(5)').textContent;
             const cantidad = parseInt(row.querySelector('.rTableCell:nth-child(8) input[type="number"]').value);
-            // extrae el valor numerico del precio para pasar al query string
-            const precioOriginal = precio.replace(/[^\d.-]/g, '').replace(',', '.');
+
             // guarda el valor en el array
             selectedItems.push({ itemNo, nombre, precio, cantidad });
         }
     });
 
     // arma la query string con todos los valores
-    const queryString = selectedItems.map(item =>
-        `itemNo=${encodeURIComponent(item.itemNo)}&nombre=${encodeURIComponent(item.nombre)}&cantidad=${item.cantidad}&&precio=${encodeURIComponent(item.precio.replace('$', '')) }`
-    ).join('&');
+    const queryString = selectedItems.map(item => `itemNo=${item.itemNo}&nombre=${item.nombre}&cantidad=${item.cantidad}&precio=${item.precio}`).join('&');
 
     // redirecciona a la finalizacion de la orden con el query string
     window.location.href = `../internet/order.html?${queryString}`;
