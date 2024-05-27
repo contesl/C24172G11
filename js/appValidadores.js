@@ -78,26 +78,36 @@ function sombraCampo(field){
     })
 }
 
+if (usernameField){
 usernameField.addEventListener("click", function(e){
     validarCampo(usernameField);
 })
+}
 
+if (emailField) {
 emailField.addEventListener("click", function(e){
     validarCampo(emailField)
 })
-
+}
+if (companyField) {
 companyField.addEventListener("click", function(e){
     sombraCampo(companyField)
 })
+}
 
+if (phoneField) {
 phoneField.addEventListener("click", function(e){
     sombraCampo(phoneField)
 })
+}
 
+if (comentField) {
 comentField.addEventListener("click", function(e){
     sombraCampo(comentField)
 })
+}
 
+if (formContact) {
 formContact.addEventListener("submit", function(e){
     
     if ((!usernameValid) || (!emailValid) || (!checkboxField.checked)){
@@ -110,3 +120,4 @@ formContact.addEventListener("submit", function(e){
         alert('¡Datos enviados exitosamente!')
     }
 })
+}
