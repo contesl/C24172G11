@@ -1,4 +1,5 @@
-// Get the category parameter from the URL
+// la pagina catalog.html pasa la categoria seleccionada com parametro
+// este js lo toma para filtrar los productos
 const urlParams = new URLSearchParams(window.location.search);
 const categoria = urlParams.get('categoria');
 
@@ -9,7 +10,8 @@ const categoria = urlParams.get('categoria');
 const url = 'https://contesl.github.io/C24172G11/db/JSON/Item.json';
 
 
-// Fetch data using the Fetch API
+// tenemos un JSON con el detalle de los productos
+// hacemos fetch usando la API como el profe nos enseño
 fetch(url)
     .then(response => {
         if (!response.ok) {
@@ -18,15 +20,16 @@ fetch(url)
         return response.json();
     })
     .then(data => {
-        // Filter data based on the category
+        // filtra los datos basado en la categoria
         const filteredData = data.filter(item => item.Categoria === categoria);
 
-        // Set the category title dynamically
+        // de acuerdo a la categoria muestra el titulo en catitems.html
         const categoryTitle = document.getElementById('categoryTitle');
         categoryTitle.textContent = `Categoria: ${categoria}`;
-        categoryTitle.setAttribute('class', 'headerSubtitulo'); // Add class attribute
+        categoryTitle.setAttribute('class', 'headerSubtitulo'); 
 
-        // Display the filtered data on the page
+        // llama a la funcion para desplega los productos
+        // pasandole la data ya filtrada
         displayProducts(filteredData);
     })
     .catch(error => {
@@ -41,7 +44,7 @@ function displayProducts(products) {
         return;
     }
 
-    // Create a table to display the products
+    // genera una tabla usando div y clases definidas en estilos.css
     const table = document.createElement('div');
     table.setAttribute('class', 'rTable'); // Add class attribute
     table.setAttribute('border', '1'); // Add border attribute
@@ -58,7 +61,7 @@ function displayProducts(products) {
         </div>
     `;
 
-    // Populate the table with product data
+    // lee la data con articulos filtrados y va generando las filas
     products.forEach(product => {
         const row = document.createElement('div');
         row.setAttribute('class', 'rTableRow'); // Add class attribute
@@ -75,12 +78,12 @@ function displayProducts(products) {
         table.appendChild(row);
     });
 
-    // Append the table to the product list div
+    // append al div definido en la pagina como hijo
     productListDiv.appendChild(table);
 
-    // Add buttons for completing purchase and navigating to catalog page
+    // agrega los botones para ir a la finalizacion de la compra
     const buttonRow = document.createElement('div');
-    buttonRow.setAttribute('class', 'rTableRow'); // Add class attribute
+    buttonRow.setAttribute('class', 'rTableRow'); 
     buttonRow.innerHTML = `
         <div class="rTableCellNB"></div>
         <div class="rTableCellNB"></div>
@@ -91,37 +94,38 @@ function displayProducts(products) {
 }
 
 function completePurchase() {
-    // Get all checkboxes in the table
+    // toma los valores de todos los checkbox en la pagina
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-    // Array to store selected items and their quantities
+    // array para guardar los checkbox seleccionados con sus cantidad y productos
     const selectedItems = [];
 
-    // Loop through checkboxes to find selected items
+    // Loop entre todos los checkbox para detectar los seleccionados
     checkboxes.forEach((checkbox, index) => {
-        // If checkbox is checked
+ 
         if (checkbox.checked) {
-            // Get the corresponding row
-            const row = checkbox.closest('.rTableRow');
 
-            // Get the item details from the row
+            const row = checkbox.closest('.rTableRow');
+            // toma el valor de la fila que se necesita para completar la compra
+            // esto lo hace en order.html
             const itemNo = row.querySelector('.rTableCell:nth-child(2)').textContent;
             const nombre = row.querySelector('.rTableCell:nth-child(3)').textContent;
             const precio = row.querySelector('.rTableCell:nth-child(5)').textContent;
             const cantidad = parseInt(row.querySelector('.rTableCell:nth-child(8) input[type="number"]').value);
 
-            // Add item to selectedItems array
+            // guarda el valor en el array
             selectedItems.push({ itemNo, nombre, precio, cantidad });
         }
     });
 
-    // Convert selectedItems array to query string
+    // arma la query string con todos los valores
     const queryString = selectedItems.map(item => `itemNo=${item.itemNo}&nombre=${item.nombre}&cantidad=${item.cantidad}&precio=${item.precio}`).join('&');
 
-    // Redirect to order.html page with parameters
+    // redirecciona a la finalizacion de la orden con el query string
     window.location.href = `../internet/order.html?${queryString}`;
 }
 
+//esta la usamos para volver al catalogo
 function goToCatalog() {
     window.location.href = "../internet/catalog.html";
 }
