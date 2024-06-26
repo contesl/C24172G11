@@ -47,6 +47,7 @@ userForm.addEventListener('submit', async e => {
 
         users.push(data) /*para que al hacer el create luego aparezca en la lista general*/
 
+    
     } else {
         const response = await fetch(`http://127.0.0.1:5000/api/users/${userId}`, {
             method: 'PUT',
@@ -61,12 +62,16 @@ userForm.addEventListener('submit', async e => {
         })
         const updatedUser = await response.json()
         /*
-        user.id == updatedUser.id: Compara el id del usuario actual con el id de updatedUser.
-        ? updatedUser : user: Este es un operador ternario que funciona de la siguiente manera:
-        Si la condición(user.id == updatedUser.id) es verdadera, devuelve updatedUser.
+        user.id == updatedUser.id: Compara el id del usuario actual con el id de
+         updatedUser.
+        ? updatedUser : user: Este es un operador ternario que funciona 
+        de la siguiente manera:
+        Si la condición(user.id == updatedUser.id) es verdadera, 
+        devuelve updatedUser.
         Si la condición es falsa, devuelve el usuario original(user).
         */
         users = users.map(user => user.id == updatedUser.id ? updatedUser : user)
+
         editing=false
         userId=null
     }
@@ -91,8 +96,6 @@ function renderUser(users) {
         </div>
     `;
 
-    console.log(users)
-
     users.forEach(user => {
         // Create a new table row
         const newRow = document.createElement('div');
@@ -111,13 +114,17 @@ function renderUser(users) {
                 method: 'DELETE'
             })
             const deletedData = await response.json()
+
             /*
             user.id != data.id: Compara el id del usuario actual con el id de data.
-            Si la condición(user.id != data.id) es verdadera, el usuario se incluye en el nuevo array.
+            Si la condición(user.id != data.id) es verdadera, el usuario se 
+            incluye en el nuevo array.
             Si la condición es falsa, el usuario se excluye del nuevo array.
             */
+           
             users = users.filter(user => user.id !== deletedData.id)
             renderUser(users)
+
         })
 
         /*---para ejecutar la modificacion----*/
