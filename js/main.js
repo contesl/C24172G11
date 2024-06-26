@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     users = data
     editing = false
     userId = null
+
     renderUser(users)
 });
 
@@ -31,6 +32,7 @@ userForm.addEventListener('submit', async e => {
      como para MODIFICACION por eso los indicadores editing y userId
      */
     if (!editing) {
+
         const response = await fetch('http://127.0.0.1:5000/api/users', {
             method: 'POST',
             headers: {
@@ -44,6 +46,7 @@ userForm.addEventListener('submit', async e => {
         })
         /*await sirve para que se quede esperando porque es asincrono*/
         const data = await response.json()
+
 
         users.push(data) /*para que al hacer el create luego aparezca en la lista general*/
 
@@ -115,6 +118,7 @@ function renderUser(users) {
             })
             const deletedData = await response.json()
 
+
             /*
             user.id != data.id: Compara el id del usuario actual con el id de data.
             Si la condición(user.id != data.id) es verdadera, el usuario se 
@@ -123,8 +127,10 @@ function renderUser(users) {
             */
            
             users = users.filter(user => user.id !== deletedData.id)
-            renderUser(users)
 
+
+            renderUser(users)
+            
         })
 
         /*---para ejecutar la modificacion----*/
