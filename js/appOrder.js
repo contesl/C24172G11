@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const newRow = document.createElement('div');
         newRow.setAttribute('class', 'rTableRow'); // Add class attribute
         newRow.innerHTML = `
-            <div class="rTableCell">${nombre}</div>
             <div class="rTableCell">${itemNo}</div>
+            <div class="rTableCell">${nombre}</div>
             <div class="rTableCell">$${precio.toFixed(2)}</div>
             <div class="rTableCell">${cantidad}</div>
             <div class="rTableCell">$${total.toFixed(2)}</div>

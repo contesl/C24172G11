@@ -64,7 +64,6 @@ li a:hover {
     background-color: var(--bg-hover);
     transition: 0.5s;
 }
-
 /*------FIN para menu general ----*/
 
 .container {
@@ -258,55 +257,12 @@ select {
     background-color: var(--bg-ingresar);
     color: var(--bg-colorIngr);
     cursor: pointer;
-                font-family: Verdana, Arial, Helvetica, sans-serif;
-                    height: auto !important;
-                    overflow: visible;
-                    padding: 3px !important;
-                    width: auto !important;
 }
 
 .ingresar:hover {
     background-color: var(--bg-ingHover);
-    font-weight: bold;
 }
 
-.btn-delete {
-    /*
-    background-color: orange;
-    color: black;
-    */
-    cursor: pointer;
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-            height: auto !important;
-            overflow: visible;
-            padding: 3px !important;
-            width: auto !important;
-        
-}
-
-.btn-delete:hover {
-    background-color: red;
-    color: white;
-    font-weight: bold;
-}
-
-.btn-edit {
-    /*
-    background-color: rgb(255, 210, 0);
-    color: black;
-    */
-    cursor: pointer;
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-                height: auto !important;
-                overflow: visible;
-                padding: 3px !important;
-                width: auto !important;
-}
-
-.btn-edit:hover {
-    background-color: yellow;
-    font-weight: bold;
-}
 .aviso-inferior {
     text-align: center;
     font-size: 14px;

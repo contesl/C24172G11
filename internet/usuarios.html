@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="../style/estilos.css">
+</head>
+
+<body>
+        <header>
+            <section class="menu-header">
+                <nav class="menu-sections">
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="./whatis.html">Qué es SportsPro</a></li>
+                        <li><a href="./whois.html">Quiénes somos</a></li>
+                        <li><a href="./catalog.html">Comprar en Linea</a></li>
+                        <li><a href="./contacto.html">Contacto</a></li>
+                        <li><a href="./usuarios.html">Usuarios</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <figure class="contenedorImagen centered">
+                <img id="imagen-index" src="../images/header1.gif">
+            </figure>
+        </header>
+ <main>      
+    <div class="container">
+        <div>
+            <h1>Mantenimiento de Usuarios</h1>
+            <form id="userForm">
+                <label for="username">Nombre</label>
+                <input type="text" name="username" placeholder="Nombre de Usuario" required>
+                <label for="email">email</label>
+                <input type="email" name="email" placeholder="user@gmail.com" required>
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Seleccione su contraeña">
+                <button class="ingresar">Guardar</button>
+
+              
+            </form>
+
+                <div id="productListContainer">
+                    <!-- se genera una tabla dinamica con los productos comprados -->
+                </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/main.js"></script>
+</main>
+        <footer id="fDescripcionEquipo">
+            <br>
+            <hr>
+            <p>Comision 24172 - Grupo 11: Ordoñez Abril, Sergio / Conte, Sergio Luis </p>
+        
+        </footer>
+
+</body>
+
+</html>

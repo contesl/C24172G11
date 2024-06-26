@@ -3,7 +3,8 @@
 const urlParams = new URLSearchParams(window.location.search);
 const categoria = urlParams.get('categoria');
 
-const url = 'http://127.0.0.1:5000/api/Item'
+// Define the request URL
+const url = 'https://contesl.github.io/C24172G11/db/JSON/Item.json';
 
 // tenemos un JSON con el detalle de los productos
 // hacemos fetch usando la API como el profe nos enseño
@@ -16,7 +17,7 @@ fetch(url)
     })
     .then(data => {
         // filtra los datos basado en la categoria
-        const filteredData = data.filter(item => item.Category1 === categoria);
+        const filteredData = data.filter(item => item.Categoria === categoria);
 
         // de acuerdo a la categoria muestra el titulo en catitems.html
         const categoryTitle = document.getElementById('categoryTitle');
@@ -58,16 +59,16 @@ function displayProducts(products) {
 
     // lee la data con articulos filtrados y va generando las filas
     products.forEach(product => {
-        const precioFormateado = '$' + parseFloat(product['Price']).toFixed(2);
-        const disponibleFormateado = parseFloat(product['Onhand']).toFixed(2);
+        const precioFormateado = '$' + parseFloat(product['Precio']).toFixed(2);
+        const disponibleFormateado = parseFloat(product['Disponible']).toFixed(2);
 
         const row = document.createElement('div');
         row.setAttribute('class', 'rTableRow'); // Add class attribute
         row.innerHTML = `
-            <div class="rTableCell"><img class="imagen-detalle" src="../images/${product['imagen']}" alt="${product['ItemName']}"></div>
-            <div class="rTableCell">${product['Itemnum']}</div>
-            <div class="rTableCell">${product['ItemName']}</div>
-            <div class="rTableCell">${product['CatDescription']}</div>
+            <div class="rTableCell"><img class="imagen-detalle" src="../images/${product['Imagen']}" alt="${product['Nombre']}"></div>
+            <div class="rTableCell">${product['Item No']}</div>
+            <div class="rTableCell">${product['Nombre']}</div>
+            <div class="rTableCell">${product['Descripcion Catalogo']}</div>
             <div class="rTableCell">${precioFormateado}</div>
             <div class="rTableCell">${disponibleFormateado}</div>
             <div class="rTableCell"><input type="checkbox"></div>
