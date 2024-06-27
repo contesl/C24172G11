@@ -6,7 +6,8 @@ let userId = null // se actualiza el editar para que este disponible al guardar
 
 /*cuando levanta la pagina traigo los usuarios y los muestro*/
 window.addEventListener("DOMContentLoaded", async () => {
-    const response = await fetch('http://127.0.0.1:5000/api/users', {
+    //const response = await fetch('http://127.0.0.1:5000/api/users', {
+    const response = await fetch('https://c24172g11-bk.onrender.com/api/users', {
         method: 'GET'
     })
     const data = await response.json()
@@ -33,7 +34,7 @@ userForm.addEventListener('submit', async e => {
      */
     if (!editing) {
 
-        const response = await fetch('http://127.0.0.1:5000/api/users', {
+        const response = await fetch('https://c24172g11-bk.onrender.com/api/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -52,7 +53,7 @@ userForm.addEventListener('submit', async e => {
 
     
     } else {
-        const response = await fetch(`http://127.0.0.1:5000/api/users/${userId}`, {
+        const response = await fetch(`https://c24172g11-bk.onrender.com/${userId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -113,7 +114,7 @@ function renderUser(users) {
         /*--para ejecutar la BAJA--*/
         const btnDelete = newRow.querySelector('.btn-delete')
         btnDelete.addEventListener('click', async () => {
-            const response = await fetch(`http://127.0.0.1:5000/api/users/${user.id}`, {
+            const response = await fetch(`https://c24172g11-bk.onrender.com/api/users/${user.id}`, {
                 method: 'DELETE'
             })
             const deletedData = await response.json()
@@ -138,7 +139,7 @@ function renderUser(users) {
 
         btnEdit.addEventListener('click', async () => {
 
-            const response = await fetch(`http://127.0.0.1:5000/api/users/${user.id}`, {
+            const response = await fetch(`https://c24172g11-bk.onrender.com/api/users/${user.id}`, {
                 method: 'GET'
             })
             const data = await response.json()
