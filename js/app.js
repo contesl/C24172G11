@@ -3,7 +3,8 @@
 const urlParams = new URLSearchParams(window.location.search);
 const categoria = urlParams.get('categoria');
 
-const url = 'http://127.0.0.1:5000/api/Item'
+//const url = 'http://127.0.0.1:5000/api/Item'
+const url = 'https://c24172g11-bk.onrender.com/api/Item'
 
 // tenemos un JSON con el detalle de los productos
 // hacemos fetch usando la API como el profe nos enseño
