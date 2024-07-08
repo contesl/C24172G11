@@ -4,7 +4,7 @@ let users = [] //para guardar los usuarios
 let editing = false //señal para saber si edita o crea
 let userId = null // se actualiza el editar para que este disponible al guardar
 
-/*cuando levanta la pagina traigo los usuarios y los muestro*/
+/*cuando levanta la pagina traemos los usuarios y los mostramos*/
 window.addEventListener("DOMContentLoaded", async () => {
     //const response = await fetch('http://127.0.0.1:5000/api/users', {
     const response = await fetch('https://c24172g11-bk.onrender.com/api/users', {
@@ -68,8 +68,6 @@ userForm.addEventListener('submit', async e => {
         /*
         user.id == updatedUser.id: Compara el id del usuario actual con el id de
          updatedUser.
-        ? updatedUser : user: Este es un operador ternario que funciona 
-        de la siguiente manera:
         Si la condición(user.id == updatedUser.id) es verdadera, 
         devuelve updatedUser.
         Si la condición es falsa, devuelve el usuario original(user).
@@ -84,6 +82,7 @@ userForm.addEventListener('submit', async e => {
     userForm.reset() /*para limpiar el formulario*/
 })
 
+/*armado de la tabla dinamica con los usuarios y refresh*/
 function renderUser(users) {
     const userList = document.getElementById('productListContainer');
     userList.innerHTML = ''
@@ -101,7 +100,7 @@ function renderUser(users) {
     `;
 
     users.forEach(user => {
-        // Create a new table row
+        // armado dinamico de la tabla con los usuarios y los botones por fila
         const newRow = document.createElement('div');
         newRow.setAttribute('class', 'rTableRow'); // Add class attribute
         newRow.innerHTML = `
